@@ -1,0 +1,557 @@
+{
+  "levelId": 1,
+  "title": "Basic Deduction",
+  "format": "multiple_choice",
+  "questions": [
+    {
+      "id": "Q1",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q2",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q3",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q4",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q5",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q6",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q7",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q8",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q9",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q10",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q11",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q12",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q13",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q14",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q15",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q16",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q17",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q18",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q19",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q20",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q21",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q22",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q23",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q24",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q25",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q26",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q27",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q28",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q29",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q30",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q31",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q32",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q33",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q34",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q35",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q36",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q37",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q38",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q39",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q40",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q41",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q42",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q43",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q44",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q45",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q46",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q47",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q48",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q49",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    },
+    {
+      "id": "Q50",
+      "prompt": "All birds can fly. A penguin is a bird. Can a penguin fly?",
+      "options": [
+        "True",
+        "False",
+        "Cannot Say"
+      ],
+      "correct": "False",
+      "aiLogic": "Exception to generalization: Penguins are flightless birds."
+    }
+  ]
+}
