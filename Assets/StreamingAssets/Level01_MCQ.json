@@ -1,0 +1,1206 @@
+{
+  "title": "Level 1 \u2013 Deductive Reasoning",
+  "format": "multiple_choice",
+  "questions": [
+    {
+      "id": "Q1",
+      "prompt": "All robots are machines. Some machines are not intelligent. What can be logically inferred?",
+      "options": [
+        "Some robots are not intelligent.",
+        "Only if both premises are false, the conclusion is true.",
+        "The second premise is invalid.",
+        "No valid conclusion can be drawn."
+      ],
+      "correct": "Some robots are not intelligent.",
+      "aiLogic": "Using logical inference based on the premises: 'All robots are machines.' and 'Some machines are not intelligent.', we deduce that 'Some robots are not intelligent.' is the valid conclusion."
+    },
+    {
+      "id": "Q2",
+      "prompt": "If an algorithm terminates, then it halts. An algorithm halts. What can be logically inferred?",
+      "options": [
+        "The opposite of the conclusion is true.",
+        "Only if both premises are false, the conclusion is true.",
+        "The algorithm terminates.",
+        "The second premise is invalid."
+      ],
+      "correct": "The algorithm terminates.",
+      "aiLogic": "Using logical inference based on the premises: 'If an algorithm terminates, then it halts.' and 'An algorithm halts.', we deduce that 'The algorithm terminates.' is the valid conclusion."
+    },
+    {
+      "id": "Q3",
+      "prompt": "All AI systems use data. This system does not use data. What can be logically inferred?",
+      "options": [
+        "It is not an AI system.",
+        "The second premise is invalid.",
+        "The opposite of the conclusion is true.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "It is not an AI system.",
+      "aiLogic": "Using logical inference based on the premises: 'All AI systems use data.' and 'This system does not use data.', we deduce that 'It is not an AI system.' is the valid conclusion."
+    },
+    {
+      "id": "Q4",
+      "prompt": "P \u2192 Q Q \u2192 R What can be logically inferred?",
+      "options": [
+        "P \u2192 R",
+        "The second premise is invalid.",
+        "The opposite of the conclusion is true.",
+        "No valid conclusion can be drawn."
+      ],
+      "correct": "P \u2192 R",
+      "aiLogic": "Using logical inference based on the premises: 'P \u2192 Q' and 'Q \u2192 R', we deduce that 'P \u2192 R' is the valid conclusion."
+    },
+    {
+      "id": "Q5",
+      "prompt": "If knowledge is represented, it can be reasoned about. This system represents knowledge. What can be logically inferred?",
+      "options": [
+        "No valid conclusion can be drawn.",
+        "It can be reasoned about.",
+        "Only if both premises are false, the conclusion is true.",
+        "The opposite of the conclusion is true."
+      ],
+      "correct": "It can be reasoned about.",
+      "aiLogic": "Using logical inference based on the premises: 'If knowledge is represented, it can be reasoned about.' and 'This system represents knowledge.', we deduce that 'It can be reasoned about.' is the valid conclusion."
+    },
+    {
+      "id": "Q6",
+      "prompt": "Some logic programs are recursive. All recursive programs require base cases. What can be logically inferred?",
+      "options": [
+        "No valid conclusion can be drawn.",
+        "Only if both premises are false, the conclusion is true.",
+        "The opposite of the conclusion is true.",
+        "Some logic programs require base cases."
+      ],
+      "correct": "Some logic programs require base cases.",
+      "aiLogic": "Using logical inference based on the premises: 'Some logic programs are recursive.' and 'All recursive programs require base cases.', we deduce that 'Some logic programs require base cases.' is the valid conclusion."
+    },
+    {
+      "id": "Q7",
+      "prompt": "Every Turing machine is computable. Some computable problems are not solvable in polynomial time. What can be logically inferred?",
+      "options": [
+        "The second premise is invalid.",
+        "The opposite of the conclusion is true.",
+        "No valid conclusion can be drawn.",
+        "Some Turing machines solve problems not solvable in polynomial time."
+      ],
+      "correct": "Some Turing machines solve problems not solvable in polynomial time.",
+      "aiLogic": "Using logical inference based on the premises: 'Every Turing machine is computable.' and 'Some computable problems are not solvable in polynomial time.', we deduce that 'Some Turing machines solve problems not solvable in polynomial time.' is the valid conclusion."
+    },
+    {
+      "id": "Q8",
+      "prompt": "No expert systems are probabilistic. Bayesian networks are probabilistic. What can be logically inferred?",
+      "options": [
+        "Bayesian networks are not expert systems.",
+        "The second premise is invalid.",
+        "Only if both premises are false, the conclusion is true.",
+        "No valid conclusion can be drawn."
+      ],
+      "correct": "Bayesian networks are not expert systems.",
+      "aiLogic": "Using logical inference based on the premises: 'No expert systems are probabilistic.' and 'Bayesian networks are probabilistic.', we deduce that 'Bayesian networks are not expert systems.' is the valid conclusion."
+    },
+    {
+      "id": "Q9",
+      "prompt": "If data is consistent, then the conclusion is valid. The conclusion is not valid. What can be logically inferred?",
+      "options": [
+        "Data is inconsistent.",
+        "No valid conclusion can be drawn.",
+        "The opposite of the conclusion is true.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "Data is inconsistent.",
+      "aiLogic": "Using logical inference based on the premises: 'If data is consistent, then the conclusion is valid.' and 'The conclusion is not valid.', we deduce that 'Data is inconsistent.' is the valid conclusion."
+    },
+    {
+      "id": "Q10",
+      "prompt": "All AI systems use data. This system does not use data. What can be logically inferred?",
+      "options": [
+        "The opposite of the conclusion is true.",
+        "Only if both premises are false, the conclusion is true.",
+        "It is not an AI system.",
+        "The second premise is invalid."
+      ],
+      "correct": "It is not an AI system.",
+      "aiLogic": "Using logical inference based on the premises: 'All AI systems use data.' and 'This system does not use data.', we deduce that 'It is not an AI system.' is the valid conclusion."
+    },
+    {
+      "id": "Q11",
+      "prompt": "P \u2192 Q Q \u2192 R What can be logically inferred?",
+      "options": [
+        "The second premise is invalid.",
+        "P \u2192 R",
+        "Only if both premises are false, the conclusion is true.",
+        "No valid conclusion can be drawn."
+      ],
+      "correct": "P \u2192 R",
+      "aiLogic": "Using logical inference based on the premises: 'P \u2192 Q' and 'Q \u2192 R', we deduce that 'P \u2192 R' is the valid conclusion."
+    },
+    {
+      "id": "Q12",
+      "prompt": "If an algorithm terminates, then it halts. An algorithm halts. What can be logically inferred?",
+      "options": [
+        "No valid conclusion can be drawn.",
+        "Only if both premises are false, the conclusion is true.",
+        "The algorithm terminates.",
+        "The opposite of the conclusion is true."
+      ],
+      "correct": "The algorithm terminates.",
+      "aiLogic": "Using logical inference based on the premises: 'If an algorithm terminates, then it halts.' and 'An algorithm halts.', we deduce that 'The algorithm terminates.' is the valid conclusion."
+    },
+    {
+      "id": "Q13",
+      "prompt": "All robots are machines. Some machines are not intelligent. What can be logically inferred?",
+      "options": [
+        "No valid conclusion can be drawn.",
+        "Some robots are not intelligent.",
+        "Only if both premises are false, the conclusion is true.",
+        "The second premise is invalid."
+      ],
+      "correct": "Some robots are not intelligent.",
+      "aiLogic": "Using logical inference based on the premises: 'All robots are machines.' and 'Some machines are not intelligent.', we deduce that 'Some robots are not intelligent.' is the valid conclusion."
+    },
+    {
+      "id": "Q14",
+      "prompt": "If A \u2227 B \u2192 C A is true, B is true What can be logically inferred?",
+      "options": [
+        "The opposite of the conclusion is true.",
+        "The second premise is invalid.",
+        "C must be true.",
+        "No valid conclusion can be drawn."
+      ],
+      "correct": "C must be true.",
+      "aiLogic": "Using logical inference based on the premises: 'If A \u2227 B \u2192 C' and 'A is true, B is true', we deduce that 'C must be true.' is the valid conclusion."
+    },
+    {
+      "id": "Q15",
+      "prompt": "No expert systems are probabilistic. Bayesian networks are probabilistic. What can be logically inferred?",
+      "options": [
+        "Bayesian networks are not expert systems.",
+        "No valid conclusion can be drawn.",
+        "Only if both premises are false, the conclusion is true.",
+        "The second premise is invalid."
+      ],
+      "correct": "Bayesian networks are not expert systems.",
+      "aiLogic": "Using logical inference based on the premises: 'No expert systems are probabilistic.' and 'Bayesian networks are probabilistic.', we deduce that 'Bayesian networks are not expert systems.' is the valid conclusion."
+    },
+    {
+      "id": "Q16",
+      "prompt": "All robots are machines. Some machines are not intelligent. What can be logically inferred?",
+      "options": [
+        "Some robots are not intelligent.",
+        "The opposite of the conclusion is true.",
+        "The second premise is invalid.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "Some robots are not intelligent.",
+      "aiLogic": "Using logical inference based on the premises: 'All robots are machines.' and 'Some machines are not intelligent.', we deduce that 'Some robots are not intelligent.' is the valid conclusion."
+    },
+    {
+      "id": "Q17",
+      "prompt": "If knowledge is represented, it can be reasoned about. This system represents knowledge. What can be logically inferred?",
+      "options": [
+        "The opposite of the conclusion is true.",
+        "Only if both premises are false, the conclusion is true.",
+        "The second premise is invalid.",
+        "It can be reasoned about."
+      ],
+      "correct": "It can be reasoned about.",
+      "aiLogic": "Using logical inference based on the premises: 'If knowledge is represented, it can be reasoned about.' and 'This system represents knowledge.', we deduce that 'It can be reasoned about.' is the valid conclusion."
+    },
+    {
+      "id": "Q18",
+      "prompt": "Some logic programs are recursive. All recursive programs require base cases. What can be logically inferred?",
+      "options": [
+        "Only if both premises are false, the conclusion is true.",
+        "Some logic programs require base cases.",
+        "No valid conclusion can be drawn.",
+        "The opposite of the conclusion is true."
+      ],
+      "correct": "Some logic programs require base cases.",
+      "aiLogic": "Using logical inference based on the premises: 'Some logic programs are recursive.' and 'All recursive programs require base cases.', we deduce that 'Some logic programs require base cases.' is the valid conclusion."
+    },
+    {
+      "id": "Q19",
+      "prompt": "No expert systems are probabilistic. Bayesian networks are probabilistic. What can be logically inferred?",
+      "options": [
+        "No valid conclusion can be drawn.",
+        "Only if both premises are false, the conclusion is true.",
+        "Bayesian networks are not expert systems.",
+        "The second premise is invalid."
+      ],
+      "correct": "Bayesian networks are not expert systems.",
+      "aiLogic": "Using logical inference based on the premises: 'No expert systems are probabilistic.' and 'Bayesian networks are probabilistic.', we deduce that 'Bayesian networks are not expert systems.' is the valid conclusion."
+    },
+    {
+      "id": "Q20",
+      "prompt": "If \u00acP \u2192 Q Q is false What can be logically inferred?",
+      "options": [
+        "The opposite of the conclusion is true.",
+        "P must be true.",
+        "The second premise is invalid.",
+        "No valid conclusion can be drawn."
+      ],
+      "correct": "P must be true.",
+      "aiLogic": "Using logical inference based on the premises: 'If \u00acP \u2192 Q' and 'Q is false', we deduce that 'P must be true.' is the valid conclusion."
+    },
+    {
+      "id": "Q21",
+      "prompt": "If knowledge is represented, it can be reasoned about. This system represents knowledge. What can be logically inferred?",
+      "options": [
+        "It can be reasoned about.",
+        "The opposite of the conclusion is true.",
+        "No valid conclusion can be drawn.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "It can be reasoned about.",
+      "aiLogic": "Using logical inference based on the premises: 'If knowledge is represented, it can be reasoned about.' and 'This system represents knowledge.', we deduce that 'It can be reasoned about.' is the valid conclusion."
+    },
+    {
+      "id": "Q22",
+      "prompt": "All x (Px \u2192 Qx) Pa is true What can be logically inferred?",
+      "options": [
+        "Qa is true.",
+        "The opposite of the conclusion is true.",
+        "Only if both premises are false, the conclusion is true.",
+        "The second premise is invalid."
+      ],
+      "correct": "Qa is true.",
+      "aiLogic": "Using logical inference based on the premises: 'All x (Px \u2192 Qx)' and 'Pa is true', we deduce that 'Qa is true.' is the valid conclusion."
+    },
+    {
+      "id": "Q23",
+      "prompt": "If knowledge is represented, it can be reasoned about. This system represents knowledge. What can be logically inferred?",
+      "options": [
+        "It can be reasoned about.",
+        "Only if both premises are false, the conclusion is true.",
+        "The second premise is invalid.",
+        "The opposite of the conclusion is true."
+      ],
+      "correct": "It can be reasoned about.",
+      "aiLogic": "Using logical inference based on the premises: 'If knowledge is represented, it can be reasoned about.' and 'This system represents knowledge.', we deduce that 'It can be reasoned about.' is the valid conclusion."
+    },
+    {
+      "id": "Q24",
+      "prompt": "No expert systems are probabilistic. Bayesian networks are probabilistic. What can be logically inferred?",
+      "options": [
+        "The opposite of the conclusion is true.",
+        "Only if both premises are false, the conclusion is true.",
+        "Bayesian networks are not expert systems.",
+        "No valid conclusion can be drawn."
+      ],
+      "correct": "Bayesian networks are not expert systems.",
+      "aiLogic": "Using logical inference based on the premises: 'No expert systems are probabilistic.' and 'Bayesian networks are probabilistic.', we deduce that 'Bayesian networks are not expert systems.' is the valid conclusion."
+    },
+    {
+      "id": "Q25",
+      "prompt": "If data is consistent, then the conclusion is valid. The conclusion is not valid. What can be logically inferred?",
+      "options": [
+        "The opposite of the conclusion is true.",
+        "The second premise is invalid.",
+        "Data is inconsistent.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "Data is inconsistent.",
+      "aiLogic": "Using logical inference based on the premises: 'If data is consistent, then the conclusion is valid.' and 'The conclusion is not valid.', we deduce that 'Data is inconsistent.' is the valid conclusion."
+    },
+    {
+      "id": "Q26",
+      "prompt": "All x (Px \u2192 Qx) Pa is true What can be logically inferred?",
+      "options": [
+        "The opposite of the conclusion is true.",
+        "Qa is true.",
+        "The second premise is invalid.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "Qa is true.",
+      "aiLogic": "Using logical inference based on the premises: 'All x (Px \u2192 Qx)' and 'Pa is true', we deduce that 'Qa is true.' is the valid conclusion."
+    },
+    {
+      "id": "Q27",
+      "prompt": "Every Turing machine is computable. Some computable problems are not solvable in polynomial time. What can be logically inferred?",
+      "options": [
+        "The opposite of the conclusion is true.",
+        "Some Turing machines solve problems not solvable in polynomial time.",
+        "The second premise is invalid.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "Some Turing machines solve problems not solvable in polynomial time.",
+      "aiLogic": "Using logical inference based on the premises: 'Every Turing machine is computable.' and 'Some computable problems are not solvable in polynomial time.', we deduce that 'Some Turing machines solve problems not solvable in polynomial time.' is the valid conclusion."
+    },
+    {
+      "id": "Q28",
+      "prompt": "If \u00acP \u2192 Q Q is false What can be logically inferred?",
+      "options": [
+        "P must be true.",
+        "The opposite of the conclusion is true.",
+        "No valid conclusion can be drawn.",
+        "The second premise is invalid."
+      ],
+      "correct": "P must be true.",
+      "aiLogic": "Using logical inference based on the premises: 'If \u00acP \u2192 Q' and 'Q is false', we deduce that 'P must be true.' is the valid conclusion."
+    },
+    {
+      "id": "Q29",
+      "prompt": "If \u00acP \u2192 Q Q is false What can be logically inferred?",
+      "options": [
+        "The second premise is invalid.",
+        "P must be true.",
+        "No valid conclusion can be drawn.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "P must be true.",
+      "aiLogic": "Using logical inference based on the premises: 'If \u00acP \u2192 Q' and 'Q is false', we deduce that 'P must be true.' is the valid conclusion."
+    },
+    {
+      "id": "Q30",
+      "prompt": "All x (Px \u2192 Qx) Pa is true What can be logically inferred?",
+      "options": [
+        "No valid conclusion can be drawn.",
+        "Qa is true.",
+        "The opposite of the conclusion is true.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "Qa is true.",
+      "aiLogic": "Using logical inference based on the premises: 'All x (Px \u2192 Qx)' and 'Pa is true', we deduce that 'Qa is true.' is the valid conclusion."
+    },
+    {
+      "id": "Q31",
+      "prompt": "All robots are machines. Some machines are not intelligent. What can be logically inferred?",
+      "options": [
+        "Only if both premises are false, the conclusion is true.",
+        "Some robots are not intelligent.",
+        "The opposite of the conclusion is true.",
+        "No valid conclusion can be drawn."
+      ],
+      "correct": "Some robots are not intelligent.",
+      "aiLogic": "Using logical inference based on the premises: 'All robots are machines.' and 'Some machines are not intelligent.', we deduce that 'Some robots are not intelligent.' is the valid conclusion."
+    },
+    {
+      "id": "Q32",
+      "prompt": "All AI systems use data. This system does not use data. What can be logically inferred?",
+      "options": [
+        "The opposite of the conclusion is true.",
+        "The second premise is invalid.",
+        "Only if both premises are false, the conclusion is true.",
+        "It is not an AI system."
+      ],
+      "correct": "It is not an AI system.",
+      "aiLogic": "Using logical inference based on the premises: 'All AI systems use data.' and 'This system does not use data.', we deduce that 'It is not an AI system.' is the valid conclusion."
+    },
+    {
+      "id": "Q33",
+      "prompt": "P \u2192 Q Q \u2192 R What can be logically inferred?",
+      "options": [
+        "The opposite of the conclusion is true.",
+        "The second premise is invalid.",
+        "Only if both premises are false, the conclusion is true.",
+        "P \u2192 R"
+      ],
+      "correct": "P \u2192 R",
+      "aiLogic": "Using logical inference based on the premises: 'P \u2192 Q' and 'Q \u2192 R', we deduce that 'P \u2192 R' is the valid conclusion."
+    },
+    {
+      "id": "Q34",
+      "prompt": "If knowledge is represented, it can be reasoned about. This system represents knowledge. What can be logically inferred?",
+      "options": [
+        "The opposite of the conclusion is true.",
+        "It can be reasoned about.",
+        "The second premise is invalid.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "It can be reasoned about.",
+      "aiLogic": "Using logical inference based on the premises: 'If knowledge is represented, it can be reasoned about.' and 'This system represents knowledge.', we deduce that 'It can be reasoned about.' is the valid conclusion."
+    },
+    {
+      "id": "Q35",
+      "prompt": "If knowledge is represented, it can be reasoned about. This system represents knowledge. What can be logically inferred?",
+      "options": [
+        "The second premise is invalid.",
+        "The opposite of the conclusion is true.",
+        "It can be reasoned about.",
+        "No valid conclusion can be drawn."
+      ],
+      "correct": "It can be reasoned about.",
+      "aiLogic": "Using logical inference based on the premises: 'If knowledge is represented, it can be reasoned about.' and 'This system represents knowledge.', we deduce that 'It can be reasoned about.' is the valid conclusion."
+    },
+    {
+      "id": "Q36",
+      "prompt": "If an algorithm terminates, then it halts. An algorithm halts. What can be logically inferred?",
+      "options": [
+        "The algorithm terminates.",
+        "The opposite of the conclusion is true.",
+        "The second premise is invalid.",
+        "No valid conclusion can be drawn."
+      ],
+      "correct": "The algorithm terminates.",
+      "aiLogic": "Using logical inference based on the premises: 'If an algorithm terminates, then it halts.' and 'An algorithm halts.', we deduce that 'The algorithm terminates.' is the valid conclusion."
+    },
+    {
+      "id": "Q37",
+      "prompt": "If \u00acP \u2192 Q Q is false What can be logically inferred?",
+      "options": [
+        "P must be true.",
+        "No valid conclusion can be drawn.",
+        "The opposite of the conclusion is true.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "P must be true.",
+      "aiLogic": "Using logical inference based on the premises: 'If \u00acP \u2192 Q' and 'Q is false', we deduce that 'P must be true.' is the valid conclusion."
+    },
+    {
+      "id": "Q38",
+      "prompt": "P \u2192 Q Q \u2192 R What can be logically inferred?",
+      "options": [
+        "P \u2192 R",
+        "No valid conclusion can be drawn.",
+        "The opposite of the conclusion is true.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "P \u2192 R",
+      "aiLogic": "Using logical inference based on the premises: 'P \u2192 Q' and 'Q \u2192 R', we deduce that 'P \u2192 R' is the valid conclusion."
+    },
+    {
+      "id": "Q39",
+      "prompt": "Some logic programs are recursive. All recursive programs require base cases. What can be logically inferred?",
+      "options": [
+        "No valid conclusion can be drawn.",
+        "Some logic programs require base cases.",
+        "The opposite of the conclusion is true.",
+        "The second premise is invalid."
+      ],
+      "correct": "Some logic programs require base cases.",
+      "aiLogic": "Using logical inference based on the premises: 'Some logic programs are recursive.' and 'All recursive programs require base cases.', we deduce that 'Some logic programs require base cases.' is the valid conclusion."
+    },
+    {
+      "id": "Q40",
+      "prompt": "If an algorithm terminates, then it halts. An algorithm halts. What can be logically inferred?",
+      "options": [
+        "The opposite of the conclusion is true.",
+        "Only if both premises are false, the conclusion is true.",
+        "No valid conclusion can be drawn.",
+        "The algorithm terminates."
+      ],
+      "correct": "The algorithm terminates.",
+      "aiLogic": "Using logical inference based on the premises: 'If an algorithm terminates, then it halts.' and 'An algorithm halts.', we deduce that 'The algorithm terminates.' is the valid conclusion."
+    },
+    {
+      "id": "Q41",
+      "prompt": "Some logic programs are recursive. All recursive programs require base cases. What can be logically inferred?",
+      "options": [
+        "Some logic programs require base cases.",
+        "The opposite of the conclusion is true.",
+        "Only if both premises are false, the conclusion is true.",
+        "The second premise is invalid."
+      ],
+      "correct": "Some logic programs require base cases.",
+      "aiLogic": "Using logical inference based on the premises: 'Some logic programs are recursive.' and 'All recursive programs require base cases.', we deduce that 'Some logic programs require base cases.' is the valid conclusion."
+    },
+    {
+      "id": "Q42",
+      "prompt": "If A \u2227 B \u2192 C A is true, B is true What can be logically inferred?",
+      "options": [
+        "C must be true.",
+        "No valid conclusion can be drawn.",
+        "The opposite of the conclusion is true.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "C must be true.",
+      "aiLogic": "Using logical inference based on the premises: 'If A \u2227 B \u2192 C' and 'A is true, B is true', we deduce that 'C must be true.' is the valid conclusion."
+    },
+    {
+      "id": "Q43",
+      "prompt": "P \u2192 Q Q \u2192 R What can be logically inferred?",
+      "options": [
+        "The opposite of the conclusion is true.",
+        "P \u2192 R",
+        "Only if both premises are false, the conclusion is true.",
+        "No valid conclusion can be drawn."
+      ],
+      "correct": "P \u2192 R",
+      "aiLogic": "Using logical inference based on the premises: 'P \u2192 Q' and 'Q \u2192 R', we deduce that 'P \u2192 R' is the valid conclusion."
+    },
+    {
+      "id": "Q44",
+      "prompt": "Some logic programs are recursive. All recursive programs require base cases. What can be logically inferred?",
+      "options": [
+        "Only if both premises are false, the conclusion is true.",
+        "No valid conclusion can be drawn.",
+        "Some logic programs require base cases.",
+        "The opposite of the conclusion is true."
+      ],
+      "correct": "Some logic programs require base cases.",
+      "aiLogic": "Using logical inference based on the premises: 'Some logic programs are recursive.' and 'All recursive programs require base cases.', we deduce that 'Some logic programs require base cases.' is the valid conclusion."
+    },
+    {
+      "id": "Q45",
+      "prompt": "P \u2192 Q Q \u2192 R What can be logically inferred?",
+      "options": [
+        "The second premise is invalid.",
+        "Only if both premises are false, the conclusion is true.",
+        "The opposite of the conclusion is true.",
+        "P \u2192 R"
+      ],
+      "correct": "P \u2192 R",
+      "aiLogic": "Using logical inference based on the premises: 'P \u2192 Q' and 'Q \u2192 R', we deduce that 'P \u2192 R' is the valid conclusion."
+    },
+    {
+      "id": "Q46",
+      "prompt": "If data is consistent, then the conclusion is valid. The conclusion is not valid. What can be logically inferred?",
+      "options": [
+        "Only if both premises are false, the conclusion is true.",
+        "The opposite of the conclusion is true.",
+        "The second premise is invalid.",
+        "Data is inconsistent."
+      ],
+      "correct": "Data is inconsistent.",
+      "aiLogic": "Using logical inference based on the premises: 'If data is consistent, then the conclusion is valid.' and 'The conclusion is not valid.', we deduce that 'Data is inconsistent.' is the valid conclusion."
+    },
+    {
+      "id": "Q47",
+      "prompt": "All x (Px \u2192 Qx) Pa is true What can be logically inferred?",
+      "options": [
+        "The opposite of the conclusion is true.",
+        "Only if both premises are false, the conclusion is true.",
+        "Qa is true.",
+        "No valid conclusion can be drawn."
+      ],
+      "correct": "Qa is true.",
+      "aiLogic": "Using logical inference based on the premises: 'All x (Px \u2192 Qx)' and 'Pa is true', we deduce that 'Qa is true.' is the valid conclusion."
+    },
+    {
+      "id": "Q48",
+      "prompt": "No expert systems are probabilistic. Bayesian networks are probabilistic. What can be logically inferred?",
+      "options": [
+        "Bayesian networks are not expert systems.",
+        "No valid conclusion can be drawn.",
+        "The opposite of the conclusion is true.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "Bayesian networks are not expert systems.",
+      "aiLogic": "Using logical inference based on the premises: 'No expert systems are probabilistic.' and 'Bayesian networks are probabilistic.', we deduce that 'Bayesian networks are not expert systems.' is the valid conclusion."
+    },
+    {
+      "id": "Q49",
+      "prompt": "If \u00acP \u2192 Q Q is false What can be logically inferred?",
+      "options": [
+        "P must be true.",
+        "The opposite of the conclusion is true.",
+        "The second premise is invalid.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "P must be true.",
+      "aiLogic": "Using logical inference based on the premises: 'If \u00acP \u2192 Q' and 'Q is false', we deduce that 'P must be true.' is the valid conclusion."
+    },
+    {
+      "id": "Q50",
+      "prompt": "P \u2192 Q, Q \u2192 R P is true What can be logically inferred?",
+      "options": [
+        "R is true.",
+        "No valid conclusion can be drawn.",
+        "The second premise is invalid.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "R is true.",
+      "aiLogic": "Using logical inference based on the premises: 'P \u2192 Q, Q \u2192 R' and 'P is true', we deduce that 'R is true.' is the valid conclusion."
+    },
+    {
+      "id": "Q51",
+      "prompt": "If \u00acP \u2192 Q Q is false What can be logically inferred?",
+      "options": [
+        "P must be true.",
+        "The opposite of the conclusion is true.",
+        "Only if both premises are false, the conclusion is true.",
+        "No valid conclusion can be drawn."
+      ],
+      "correct": "P must be true.",
+      "aiLogic": "Using logical inference based on the premises: 'If \u00acP \u2192 Q' and 'Q is false', we deduce that 'P must be true.' is the valid conclusion."
+    },
+    {
+      "id": "Q52",
+      "prompt": "If A \u2227 B \u2192 C A is true, B is true What can be logically inferred?",
+      "options": [
+        "C must be true.",
+        "The opposite of the conclusion is true.",
+        "The second premise is invalid.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "C must be true.",
+      "aiLogic": "Using logical inference based on the premises: 'If A \u2227 B \u2192 C' and 'A is true, B is true', we deduce that 'C must be true.' is the valid conclusion."
+    },
+    {
+      "id": "Q53",
+      "prompt": "If data is consistent, then the conclusion is valid. The conclusion is not valid. What can be logically inferred?",
+      "options": [
+        "The opposite of the conclusion is true.",
+        "The second premise is invalid.",
+        "No valid conclusion can be drawn.",
+        "Data is inconsistent."
+      ],
+      "correct": "Data is inconsistent.",
+      "aiLogic": "Using logical inference based on the premises: 'If data is consistent, then the conclusion is valid.' and 'The conclusion is not valid.', we deduce that 'Data is inconsistent.' is the valid conclusion."
+    },
+    {
+      "id": "Q54",
+      "prompt": "P \u2192 Q, Q \u2192 R P is true What can be logically inferred?",
+      "options": [
+        "No valid conclusion can be drawn.",
+        "The second premise is invalid.",
+        "The opposite of the conclusion is true.",
+        "R is true."
+      ],
+      "correct": "R is true.",
+      "aiLogic": "Using logical inference based on the premises: 'P \u2192 Q, Q \u2192 R' and 'P is true', we deduce that 'R is true.' is the valid conclusion."
+    },
+    {
+      "id": "Q55",
+      "prompt": "All AI systems use data. This system does not use data. What can be logically inferred?",
+      "options": [
+        "No valid conclusion can be drawn.",
+        "The opposite of the conclusion is true.",
+        "It is not an AI system.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "It is not an AI system.",
+      "aiLogic": "Using logical inference based on the premises: 'All AI systems use data.' and 'This system does not use data.', we deduce that 'It is not an AI system.' is the valid conclusion."
+    },
+    {
+      "id": "Q56",
+      "prompt": "If an algorithm terminates, then it halts. An algorithm halts. What can be logically inferred?",
+      "options": [
+        "The algorithm terminates.",
+        "The second premise is invalid.",
+        "The opposite of the conclusion is true.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "The algorithm terminates.",
+      "aiLogic": "Using logical inference based on the premises: 'If an algorithm terminates, then it halts.' and 'An algorithm halts.', we deduce that 'The algorithm terminates.' is the valid conclusion."
+    },
+    {
+      "id": "Q57",
+      "prompt": "No expert systems are probabilistic. Bayesian networks are probabilistic. What can be logically inferred?",
+      "options": [
+        "Only if both premises are false, the conclusion is true.",
+        "Bayesian networks are not expert systems.",
+        "The opposite of the conclusion is true.",
+        "The second premise is invalid."
+      ],
+      "correct": "Bayesian networks are not expert systems.",
+      "aiLogic": "Using logical inference based on the premises: 'No expert systems are probabilistic.' and 'Bayesian networks are probabilistic.', we deduce that 'Bayesian networks are not expert systems.' is the valid conclusion."
+    },
+    {
+      "id": "Q58",
+      "prompt": "Some logic programs are recursive. All recursive programs require base cases. What can be logically inferred?",
+      "options": [
+        "The opposite of the conclusion is true.",
+        "No valid conclusion can be drawn.",
+        "Only if both premises are false, the conclusion is true.",
+        "Some logic programs require base cases."
+      ],
+      "correct": "Some logic programs require base cases.",
+      "aiLogic": "Using logical inference based on the premises: 'Some logic programs are recursive.' and 'All recursive programs require base cases.', we deduce that 'Some logic programs require base cases.' is the valid conclusion."
+    },
+    {
+      "id": "Q59",
+      "prompt": "Every Turing machine is computable. Some computable problems are not solvable in polynomial time. What can be logically inferred?",
+      "options": [
+        "No valid conclusion can be drawn.",
+        "Only if both premises are false, the conclusion is true.",
+        "Some Turing machines solve problems not solvable in polynomial time.",
+        "The opposite of the conclusion is true."
+      ],
+      "correct": "Some Turing machines solve problems not solvable in polynomial time.",
+      "aiLogic": "Using logical inference based on the premises: 'Every Turing machine is computable.' and 'Some computable problems are not solvable in polynomial time.', we deduce that 'Some Turing machines solve problems not solvable in polynomial time.' is the valid conclusion."
+    },
+    {
+      "id": "Q60",
+      "prompt": "If data is consistent, then the conclusion is valid. The conclusion is not valid. What can be logically inferred?",
+      "options": [
+        "The opposite of the conclusion is true.",
+        "The second premise is invalid.",
+        "Data is inconsistent.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "Data is inconsistent.",
+      "aiLogic": "Using logical inference based on the premises: 'If data is consistent, then the conclusion is valid.' and 'The conclusion is not valid.', we deduce that 'Data is inconsistent.' is the valid conclusion."
+    },
+    {
+      "id": "Q61",
+      "prompt": "Some logic programs are recursive. All recursive programs require base cases. What can be logically inferred?",
+      "options": [
+        "Some logic programs require base cases.",
+        "The opposite of the conclusion is true.",
+        "No valid conclusion can be drawn.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "Some logic programs require base cases.",
+      "aiLogic": "Using logical inference based on the premises: 'Some logic programs are recursive.' and 'All recursive programs require base cases.', we deduce that 'Some logic programs require base cases.' is the valid conclusion."
+    },
+    {
+      "id": "Q62",
+      "prompt": "Every Turing machine is computable. Some computable problems are not solvable in polynomial time. What can be logically inferred?",
+      "options": [
+        "The second premise is invalid.",
+        "No valid conclusion can be drawn.",
+        "Some Turing machines solve problems not solvable in polynomial time.",
+        "The opposite of the conclusion is true."
+      ],
+      "correct": "Some Turing machines solve problems not solvable in polynomial time.",
+      "aiLogic": "Using logical inference based on the premises: 'Every Turing machine is computable.' and 'Some computable problems are not solvable in polynomial time.', we deduce that 'Some Turing machines solve problems not solvable in polynomial time.' is the valid conclusion."
+    },
+    {
+      "id": "Q63",
+      "prompt": "Every Turing machine is computable. Some computable problems are not solvable in polynomial time. What can be logically inferred?",
+      "options": [
+        "The second premise is invalid.",
+        "Some Turing machines solve problems not solvable in polynomial time.",
+        "The opposite of the conclusion is true.",
+        "No valid conclusion can be drawn."
+      ],
+      "correct": "Some Turing machines solve problems not solvable in polynomial time.",
+      "aiLogic": "Using logical inference based on the premises: 'Every Turing machine is computable.' and 'Some computable problems are not solvable in polynomial time.', we deduce that 'Some Turing machines solve problems not solvable in polynomial time.' is the valid conclusion."
+    },
+    {
+      "id": "Q64",
+      "prompt": "All robots are machines. Some machines are not intelligent. What can be logically inferred?",
+      "options": [
+        "Only if both premises are false, the conclusion is true.",
+        "The opposite of the conclusion is true.",
+        "The second premise is invalid.",
+        "Some robots are not intelligent."
+      ],
+      "correct": "Some robots are not intelligent.",
+      "aiLogic": "Using logical inference based on the premises: 'All robots are machines.' and 'Some machines are not intelligent.', we deduce that 'Some robots are not intelligent.' is the valid conclusion."
+    },
+    {
+      "id": "Q65",
+      "prompt": "P \u2192 Q, Q \u2192 R P is true What can be logically inferred?",
+      "options": [
+        "R is true.",
+        "The second premise is invalid.",
+        "No valid conclusion can be drawn.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "R is true.",
+      "aiLogic": "Using logical inference based on the premises: 'P \u2192 Q, Q \u2192 R' and 'P is true', we deduce that 'R is true.' is the valid conclusion."
+    },
+    {
+      "id": "Q66",
+      "prompt": "If A \u2227 B \u2192 C A is true, B is true What can be logically inferred?",
+      "options": [
+        "No valid conclusion can be drawn.",
+        "Only if both premises are false, the conclusion is true.",
+        "C must be true.",
+        "The second premise is invalid."
+      ],
+      "correct": "C must be true.",
+      "aiLogic": "Using logical inference based on the premises: 'If A \u2227 B \u2192 C' and 'A is true, B is true', we deduce that 'C must be true.' is the valid conclusion."
+    },
+    {
+      "id": "Q67",
+      "prompt": "If \u00acP \u2192 Q Q is false What can be logically inferred?",
+      "options": [
+        "The opposite of the conclusion is true.",
+        "Only if both premises are false, the conclusion is true.",
+        "P must be true.",
+        "The second premise is invalid."
+      ],
+      "correct": "P must be true.",
+      "aiLogic": "Using logical inference based on the premises: 'If \u00acP \u2192 Q' and 'Q is false', we deduce that 'P must be true.' is the valid conclusion."
+    },
+    {
+      "id": "Q68",
+      "prompt": "All robots are machines. Some machines are not intelligent. What can be logically inferred?",
+      "options": [
+        "The opposite of the conclusion is true.",
+        "Only if both premises are false, the conclusion is true.",
+        "Some robots are not intelligent.",
+        "No valid conclusion can be drawn."
+      ],
+      "correct": "Some robots are not intelligent.",
+      "aiLogic": "Using logical inference based on the premises: 'All robots are machines.' and 'Some machines are not intelligent.', we deduce that 'Some robots are not intelligent.' is the valid conclusion."
+    },
+    {
+      "id": "Q69",
+      "prompt": "P \u2192 Q Q \u2192 R What can be logically inferred?",
+      "options": [
+        "No valid conclusion can be drawn.",
+        "The opposite of the conclusion is true.",
+        "P \u2192 R",
+        "The second premise is invalid."
+      ],
+      "correct": "P \u2192 R",
+      "aiLogic": "Using logical inference based on the premises: 'P \u2192 Q' and 'Q \u2192 R', we deduce that 'P \u2192 R' is the valid conclusion."
+    },
+    {
+      "id": "Q70",
+      "prompt": "If A \u2227 B \u2192 C A is true, B is true What can be logically inferred?",
+      "options": [
+        "Only if both premises are false, the conclusion is true.",
+        "No valid conclusion can be drawn.",
+        "The second premise is invalid.",
+        "C must be true."
+      ],
+      "correct": "C must be true.",
+      "aiLogic": "Using logical inference based on the premises: 'If A \u2227 B \u2192 C' and 'A is true, B is true', we deduce that 'C must be true.' is the valid conclusion."
+    },
+    {
+      "id": "Q71",
+      "prompt": "Every Turing machine is computable. Some computable problems are not solvable in polynomial time. What can be logically inferred?",
+      "options": [
+        "Some Turing machines solve problems not solvable in polynomial time.",
+        "No valid conclusion can be drawn.",
+        "Only if both premises are false, the conclusion is true.",
+        "The second premise is invalid."
+      ],
+      "correct": "Some Turing machines solve problems not solvable in polynomial time.",
+      "aiLogic": "Using logical inference based on the premises: 'Every Turing machine is computable.' and 'Some computable problems are not solvable in polynomial time.', we deduce that 'Some Turing machines solve problems not solvable in polynomial time.' is the valid conclusion."
+    },
+    {
+      "id": "Q72",
+      "prompt": "All x (Px \u2192 Qx) Pa is true What can be logically inferred?",
+      "options": [
+        "The second premise is invalid.",
+        "Qa is true.",
+        "No valid conclusion can be drawn.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "Qa is true.",
+      "aiLogic": "Using logical inference based on the premises: 'All x (Px \u2192 Qx)' and 'Pa is true', we deduce that 'Qa is true.' is the valid conclusion."
+    },
+    {
+      "id": "Q73",
+      "prompt": "If data is consistent, then the conclusion is valid. The conclusion is not valid. What can be logically inferred?",
+      "options": [
+        "The second premise is invalid.",
+        "Data is inconsistent.",
+        "No valid conclusion can be drawn.",
+        "The opposite of the conclusion is true."
+      ],
+      "correct": "Data is inconsistent.",
+      "aiLogic": "Using logical inference based on the premises: 'If data is consistent, then the conclusion is valid.' and 'The conclusion is not valid.', we deduce that 'Data is inconsistent.' is the valid conclusion."
+    },
+    {
+      "id": "Q74",
+      "prompt": "All robots are machines. Some machines are not intelligent. What can be logically inferred?",
+      "options": [
+        "Only if both premises are false, the conclusion is true.",
+        "No valid conclusion can be drawn.",
+        "The opposite of the conclusion is true.",
+        "Some robots are not intelligent."
+      ],
+      "correct": "Some robots are not intelligent.",
+      "aiLogic": "Using logical inference based on the premises: 'All robots are machines.' and 'Some machines are not intelligent.', we deduce that 'Some robots are not intelligent.' is the valid conclusion."
+    },
+    {
+      "id": "Q75",
+      "prompt": "If knowledge is represented, it can be reasoned about. This system represents knowledge. What can be logically inferred?",
+      "options": [
+        "It can be reasoned about.",
+        "Only if both premises are false, the conclusion is true.",
+        "No valid conclusion can be drawn.",
+        "The second premise is invalid."
+      ],
+      "correct": "It can be reasoned about.",
+      "aiLogic": "Using logical inference based on the premises: 'If knowledge is represented, it can be reasoned about.' and 'This system represents knowledge.', we deduce that 'It can be reasoned about.' is the valid conclusion."
+    },
+    {
+      "id": "Q76",
+      "prompt": "Some logic programs are recursive. All recursive programs require base cases. What can be logically inferred?",
+      "options": [
+        "Only if both premises are false, the conclusion is true.",
+        "The second premise is invalid.",
+        "No valid conclusion can be drawn.",
+        "Some logic programs require base cases."
+      ],
+      "correct": "Some logic programs require base cases.",
+      "aiLogic": "Using logical inference based on the premises: 'Some logic programs are recursive.' and 'All recursive programs require base cases.', we deduce that 'Some logic programs require base cases.' is the valid conclusion."
+    },
+    {
+      "id": "Q77",
+      "prompt": "Some logic programs are recursive. All recursive programs require base cases. What can be logically inferred?",
+      "options": [
+        "Only if both premises are false, the conclusion is true.",
+        "The second premise is invalid.",
+        "Some logic programs require base cases.",
+        "No valid conclusion can be drawn."
+      ],
+      "correct": "Some logic programs require base cases.",
+      "aiLogic": "Using logical inference based on the premises: 'Some logic programs are recursive.' and 'All recursive programs require base cases.', we deduce that 'Some logic programs require base cases.' is the valid conclusion."
+    },
+    {
+      "id": "Q78",
+      "prompt": "No expert systems are probabilistic. Bayesian networks are probabilistic. What can be logically inferred?",
+      "options": [
+        "Only if both premises are false, the conclusion is true.",
+        "Bayesian networks are not expert systems.",
+        "The second premise is invalid.",
+        "The opposite of the conclusion is true."
+      ],
+      "correct": "Bayesian networks are not expert systems.",
+      "aiLogic": "Using logical inference based on the premises: 'No expert systems are probabilistic.' and 'Bayesian networks are probabilistic.', we deduce that 'Bayesian networks are not expert systems.' is the valid conclusion."
+    },
+    {
+      "id": "Q79",
+      "prompt": "If A \u2227 B \u2192 C A is true, B is true What can be logically inferred?",
+      "options": [
+        "Only if both premises are false, the conclusion is true.",
+        "No valid conclusion can be drawn.",
+        "C must be true.",
+        "The opposite of the conclusion is true."
+      ],
+      "correct": "C must be true.",
+      "aiLogic": "Using logical inference based on the premises: 'If A \u2227 B \u2192 C' and 'A is true, B is true', we deduce that 'C must be true.' is the valid conclusion."
+    },
+    {
+      "id": "Q80",
+      "prompt": "Every Turing machine is computable. Some computable problems are not solvable in polynomial time. What can be logically inferred?",
+      "options": [
+        "The second premise is invalid.",
+        "Only if both premises are false, the conclusion is true.",
+        "Some Turing machines solve problems not solvable in polynomial time.",
+        "No valid conclusion can be drawn."
+      ],
+      "correct": "Some Turing machines solve problems not solvable in polynomial time.",
+      "aiLogic": "Using logical inference based on the premises: 'Every Turing machine is computable.' and 'Some computable problems are not solvable in polynomial time.', we deduce that 'Some Turing machines solve problems not solvable in polynomial time.' is the valid conclusion."
+    },
+    {
+      "id": "Q81",
+      "prompt": "No expert systems are probabilistic. Bayesian networks are probabilistic. What can be logically inferred?",
+      "options": [
+        "No valid conclusion can be drawn.",
+        "The second premise is invalid.",
+        "Bayesian networks are not expert systems.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "Bayesian networks are not expert systems.",
+      "aiLogic": "Using logical inference based on the premises: 'No expert systems are probabilistic.' and 'Bayesian networks are probabilistic.', we deduce that 'Bayesian networks are not expert systems.' is the valid conclusion."
+    },
+    {
+      "id": "Q82",
+      "prompt": "If knowledge is represented, it can be reasoned about. This system represents knowledge. What can be logically inferred?",
+      "options": [
+        "It can be reasoned about.",
+        "The second premise is invalid.",
+        "Only if both premises are false, the conclusion is true.",
+        "The opposite of the conclusion is true."
+      ],
+      "correct": "It can be reasoned about.",
+      "aiLogic": "Using logical inference based on the premises: 'If knowledge is represented, it can be reasoned about.' and 'This system represents knowledge.', we deduce that 'It can be reasoned about.' is the valid conclusion."
+    },
+    {
+      "id": "Q83",
+      "prompt": "If \u00acP \u2192 Q Q is false What can be logically inferred?",
+      "options": [
+        "The second premise is invalid.",
+        "The opposite of the conclusion is true.",
+        "P must be true.",
+        "No valid conclusion can be drawn."
+      ],
+      "correct": "P must be true.",
+      "aiLogic": "Using logical inference based on the premises: 'If \u00acP \u2192 Q' and 'Q is false', we deduce that 'P must be true.' is the valid conclusion."
+    },
+    {
+      "id": "Q84",
+      "prompt": "P \u2192 Q Q \u2192 R What can be logically inferred?",
+      "options": [
+        "Only if both premises are false, the conclusion is true.",
+        "P \u2192 R",
+        "The second premise is invalid.",
+        "No valid conclusion can be drawn."
+      ],
+      "correct": "P \u2192 R",
+      "aiLogic": "Using logical inference based on the premises: 'P \u2192 Q' and 'Q \u2192 R', we deduce that 'P \u2192 R' is the valid conclusion."
+    },
+    {
+      "id": "Q85",
+      "prompt": "All robots are machines. Some machines are not intelligent. What can be logically inferred?",
+      "options": [
+        "Some robots are not intelligent.",
+        "The second premise is invalid.",
+        "The opposite of the conclusion is true.",
+        "No valid conclusion can be drawn."
+      ],
+      "correct": "Some robots are not intelligent.",
+      "aiLogic": "Using logical inference based on the premises: 'All robots are machines.' and 'Some machines are not intelligent.', we deduce that 'Some robots are not intelligent.' is the valid conclusion."
+    },
+    {
+      "id": "Q86",
+      "prompt": "If an algorithm terminates, then it halts. An algorithm halts. What can be logically inferred?",
+      "options": [
+        "The algorithm terminates.",
+        "The second premise is invalid.",
+        "No valid conclusion can be drawn.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "The algorithm terminates.",
+      "aiLogic": "Using logical inference based on the premises: 'If an algorithm terminates, then it halts.' and 'An algorithm halts.', we deduce that 'The algorithm terminates.' is the valid conclusion."
+    },
+    {
+      "id": "Q87",
+      "prompt": "P \u2192 Q Q \u2192 R What can be logically inferred?",
+      "options": [
+        "The opposite of the conclusion is true.",
+        "No valid conclusion can be drawn.",
+        "P \u2192 R",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "P \u2192 R",
+      "aiLogic": "Using logical inference based on the premises: 'P \u2192 Q' and 'Q \u2192 R', we deduce that 'P \u2192 R' is the valid conclusion."
+    },
+    {
+      "id": "Q88",
+      "prompt": "Some logic programs are recursive. All recursive programs require base cases. What can be logically inferred?",
+      "options": [
+        "Some logic programs require base cases.",
+        "The second premise is invalid.",
+        "No valid conclusion can be drawn.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "Some logic programs require base cases.",
+      "aiLogic": "Using logical inference based on the premises: 'Some logic programs are recursive.' and 'All recursive programs require base cases.', we deduce that 'Some logic programs require base cases.' is the valid conclusion."
+    },
+    {
+      "id": "Q89",
+      "prompt": "No expert systems are probabilistic. Bayesian networks are probabilistic. What can be logically inferred?",
+      "options": [
+        "No valid conclusion can be drawn.",
+        "The opposite of the conclusion is true.",
+        "The second premise is invalid.",
+        "Bayesian networks are not expert systems."
+      ],
+      "correct": "Bayesian networks are not expert systems.",
+      "aiLogic": "Using logical inference based on the premises: 'No expert systems are probabilistic.' and 'Bayesian networks are probabilistic.', we deduce that 'Bayesian networks are not expert systems.' is the valid conclusion."
+    },
+    {
+      "id": "Q90",
+      "prompt": "All robots are machines. Some machines are not intelligent. What can be logically inferred?",
+      "options": [
+        "Some robots are not intelligent.",
+        "The opposite of the conclusion is true.",
+        "No valid conclusion can be drawn.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "Some robots are not intelligent.",
+      "aiLogic": "Using logical inference based on the premises: 'All robots are machines.' and 'Some machines are not intelligent.', we deduce that 'Some robots are not intelligent.' is the valid conclusion."
+    },
+    {
+      "id": "Q91",
+      "prompt": "No expert systems are probabilistic. Bayesian networks are probabilistic. What can be logically inferred?",
+      "options": [
+        "Bayesian networks are not expert systems.",
+        "The second premise is invalid.",
+        "No valid conclusion can be drawn.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "Bayesian networks are not expert systems.",
+      "aiLogic": "Using logical inference based on the premises: 'No expert systems are probabilistic.' and 'Bayesian networks are probabilistic.', we deduce that 'Bayesian networks are not expert systems.' is the valid conclusion."
+    },
+    {
+      "id": "Q92",
+      "prompt": "All x (Px \u2192 Qx) Pa is true What can be logically inferred?",
+      "options": [
+        "Only if both premises are false, the conclusion is true.",
+        "Qa is true.",
+        "The second premise is invalid.",
+        "No valid conclusion can be drawn."
+      ],
+      "correct": "Qa is true.",
+      "aiLogic": "Using logical inference based on the premises: 'All x (Px \u2192 Qx)' and 'Pa is true', we deduce that 'Qa is true.' is the valid conclusion."
+    },
+    {
+      "id": "Q93",
+      "prompt": "All robots are machines. Some machines are not intelligent. What can be logically inferred?",
+      "options": [
+        "The second premise is invalid.",
+        "No valid conclusion can be drawn.",
+        "Some robots are not intelligent.",
+        "Only if both premises are false, the conclusion is true."
+      ],
+      "correct": "Some robots are not intelligent.",
+      "aiLogic": "Using logical inference based on the premises: 'All robots are machines.' and 'Some machines are not intelligent.', we deduce that 'Some robots are not intelligent.' is the valid conclusion."
+    },
+    {
+      "id": "Q94",
+      "prompt": "If A \u2227 B \u2192 C A is true, B is true What can be logically inferred?",
+      "options": [
+        "The second premise is invalid.",
+        "No valid conclusion can be drawn.",
+        "Only if both premises are false, the conclusion is true.",
+        "C must be true."
+      ],
+      "correct": "C must be true.",
+      "aiLogic": "Using logical inference based on the premises: 'If A \u2227 B \u2192 C' and 'A is true, B is true', we deduce that 'C must be true.' is the valid conclusion."
+    },
+    {
+      "id": "Q95",
+      "prompt": "If an algorithm terminates, then it halts. An algorithm halts. What can be logically inferred?",
+      "options": [
+        "The opposite of the conclusion is true.",
+        "The second premise is invalid.",
+        "Only if both premises are false, the conclusion is true.",
+        "The algorithm terminates."
+      ],
+      "correct": "The algorithm terminates.",
+      "aiLogic": "Using logical inference based on the premises: 'If an algorithm terminates, then it halts.' and 'An algorithm halts.', we deduce that 'The algorithm terminates.' is the valid conclusion."
+    },
+    {
+      "id": "Q96",
+      "prompt": "If A \u2227 B \u2192 C A is true, B is true What can be logically inferred?",
+      "options": [
+        "C must be true.",
+        "Only if both premises are false, the conclusion is true.",
+        "The second premise is invalid.",
+        "The opposite of the conclusion is true."
+      ],
+      "correct": "C must be true.",
+      "aiLogic": "Using logical inference based on the premises: 'If A \u2227 B \u2192 C' and 'A is true, B is true', we deduce that 'C must be true.' is the valid conclusion."
+    },
+    {
+      "id": "Q97",
+      "prompt": "All robots are machines. Some machines are not intelligent. What can be logically inferred?",
+      "options": [
+        "No valid conclusion can be drawn.",
+        "The second premise is invalid.",
+        "Some robots are not intelligent.",
+        "The opposite of the conclusion is true."
+      ],
+      "correct": "Some robots are not intelligent.",
+      "aiLogic": "Using logical inference based on the premises: 'All robots are machines.' and 'Some machines are not intelligent.', we deduce that 'Some robots are not intelligent.' is the valid conclusion."
+    },
+    {
+      "id": "Q98",
+      "prompt": "If knowledge is represented, it can be reasoned about. This system represents knowledge. What can be logically inferred?",
+      "options": [
+        "It can be reasoned about.",
+        "No valid conclusion can be drawn.",
+        "The second premise is invalid.",
+        "The opposite of the conclusion is true."
+      ],
+      "correct": "It can be reasoned about.",
+      "aiLogic": "Using logical inference based on the premises: 'If knowledge is represented, it can be reasoned about.' and 'This system represents knowledge.', we deduce that 'It can be reasoned about.' is the valid conclusion."
+    },
+    {
+      "id": "Q99",
+      "prompt": "If an algorithm terminates, then it halts. An algorithm halts. What can be logically inferred?",
+      "options": [
+        "No valid conclusion can be drawn.",
+        "The second premise is invalid.",
+        "Only if both premises are false, the conclusion is true.",
+        "The algorithm terminates."
+      ],
+      "correct": "The algorithm terminates.",
+      "aiLogic": "Using logical inference based on the premises: 'If an algorithm terminates, then it halts.' and 'An algorithm halts.', we deduce that 'The algorithm terminates.' is the valid conclusion."
+    },
+    {
+      "id": "Q100",
+      "prompt": "All AI systems use data. This system does not use data. What can be logically inferred?",
+      "options": [
+        "Only if both premises are false, the conclusion is true.",
+        "No valid conclusion can be drawn.",
+        "It is not an AI system.",
+        "The second premise is invalid."
+      ],
+      "correct": "It is not an AI system.",
+      "aiLogic": "Using logical inference based on the premises: 'All AI systems use data.' and 'This system does not use data.', we deduce that 'It is not an AI system.' is the valid conclusion."
+    }
+  ]
+}
