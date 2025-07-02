@@ -1,0 +1,507 @@
+{
+  "levelId": 2,
+  "title": "True or False: AI & ML Basics",
+  "format": "true_false",
+  "questions": [
+    {
+      "id": "Q1",
+      "prompt": "Supervised learning requires labeled data",
+      "correct": true
+    },
+    {
+      "id": "Q2",
+      "prompt": "Unsupervised learning always produces clusters",
+      "correct": false
+    },
+    {
+      "id": "Q3",
+      "prompt": "Gradient descent can converge to a global minimum for non-convex functions",
+      "correct": false
+    },
+    {
+      "id": "Q4",
+      "prompt": "Overfitting occurs when a model performs well on training but poorly on testing data",
+      "correct": true
+    },
+    {
+      "id": "Q5",
+      "prompt": "Regularization techniques like L1 and L2 help reduce overfitting",
+      "correct": true
+    },
+    {
+      "id": "Q6",
+      "prompt": "A decision tree can handle both categorical and numerical features",
+      "correct": true
+    },
+    {
+      "id": "Q7",
+      "prompt": "A deep neural network with more layers always performs better",
+      "correct": false
+    },
+    {
+      "id": "Q8",
+      "prompt": "Dropout is a regularization technique for neural networks",
+      "correct": true
+    },
+    {
+      "id": "Q9",
+      "prompt": "Support Vector Machines can solve non-linear problems using kernels",
+      "correct": true
+    },
+    {
+      "id": "Q10",
+      "prompt": "K-means clustering requires the number of clusters to be defined in advance",
+      "correct": true
+    },
+    {
+      "id": "Q11",
+      "prompt": "Principal Component Analysis is used for data classification",
+      "correct": false
+    },
+    {
+      "id": "Q12",
+      "prompt": "Reinforcement learning is a type of unsupervised learning",
+      "correct": false
+    },
+    {
+      "id": "Q13",
+      "prompt": "Convolutional Neural Networks are primarily used for image data",
+      "correct": true
+    },
+    {
+      "id": "Q14",
+      "prompt": "Recurrent Neural Networks cannot handle sequential data",
+      "correct": false
+    },
+    {
+      "id": "Q15",
+      "prompt": "Backpropagation is used to compute gradients in neural networks",
+      "correct": true
+    },
+    {
+      "id": "Q16",
+      "prompt": "Batch normalization slows down the training process",
+      "correct": false
+    },
+    {
+      "id": "Q17",
+      "prompt": "The bias-variance tradeoff describes model complexity issues",
+      "correct": true
+    },
+    {
+      "id": "Q18",
+      "prompt": "Ensemble methods like Random Forest use multiple decision trees",
+      "correct": true
+    },
+    {
+      "id": "Q19",
+      "prompt": "Gradient boosting builds trees sequentially to correct errors",
+      "correct": true
+    },
+    {
+      "id": "Q20",
+      "prompt": "K-Nearest Neighbors is a parametric model",
+      "correct": false
+    },
+    {
+      "id": "Q21",
+      "prompt": "Logistic regression can be used for binary classification",
+      "correct": true
+    },
+    {
+      "id": "Q22",
+      "prompt": "Cross-entropy loss is commonly used for regression tasks",
+      "correct": false
+    },
+    {
+      "id": "Q23",
+      "prompt": "Softmax activation normalizes outputs to a probability distribution",
+      "correct": true
+    },
+    {
+      "id": "Q24",
+      "prompt": "One-hot encoding is used to represent categorical variables",
+      "correct": true
+    },
+    {
+      "id": "Q25",
+      "prompt": "Dropout eliminates neurons permanently during training",
+      "correct": false
+    },
+    {
+      "id": "Q26",
+      "prompt": "Early stopping can prevent overfitting by halting training early",
+      "correct": true
+    },
+    {
+      "id": "Q27",
+      "prompt": "Learning rate scheduling adjusts the learning rate during training",
+      "correct": true
+    },
+    {
+      "id": "Q28",
+      "prompt": "ReLU activation can suffer from the vanishing gradient problem",
+      "correct": false
+    },
+    {
+      "id": "Q29",
+      "prompt": "Batch size determines the number of epochs",
+      "correct": false
+    },
+    {
+      "id": "Q30",
+      "prompt": "Stochastic gradient descent uses one sample per update",
+      "correct": true
+    },
+    {
+      "id": "Q31",
+      "prompt": "Supervised learning requires labeled data",
+      "correct": true
+    },
+    {
+      "id": "Q32",
+      "prompt": "Unsupervised learning always produces clusters",
+      "correct": false
+    },
+    {
+      "id": "Q33",
+      "prompt": "Gradient descent can converge to a global minimum for non-convex functions",
+      "correct": false
+    },
+    {
+      "id": "Q34",
+      "prompt": "Overfitting occurs when a model performs well on training but poorly on testing data",
+      "correct": true
+    },
+    {
+      "id": "Q35",
+      "prompt": "Regularization techniques like L1 and L2 help reduce overfitting",
+      "correct": true
+    },
+    {
+      "id": "Q36",
+      "prompt": "A decision tree can handle both categorical and numerical features",
+      "correct": true
+    },
+    {
+      "id": "Q37",
+      "prompt": "A deep neural network with more layers always performs better",
+      "correct": false
+    },
+    {
+      "id": "Q38",
+      "prompt": "Dropout is a regularization technique for neural networks",
+      "correct": true
+    },
+    {
+      "id": "Q39",
+      "prompt": "Support Vector Machines can solve non-linear problems using kernels",
+      "correct": true
+    },
+    {
+      "id": "Q40",
+      "prompt": "K-means clustering requires the number of clusters to be defined in advance",
+      "correct": true
+    },
+    {
+      "id": "Q41",
+      "prompt": "Principal Component Analysis is used for data classification",
+      "correct": false
+    },
+    {
+      "id": "Q42",
+      "prompt": "Reinforcement learning is a type of unsupervised learning",
+      "correct": false
+    },
+    {
+      "id": "Q43",
+      "prompt": "Convolutional Neural Networks are primarily used for image data",
+      "correct": true
+    },
+    {
+      "id": "Q44",
+      "prompt": "Recurrent Neural Networks cannot handle sequential data",
+      "correct": false
+    },
+    {
+      "id": "Q45",
+      "prompt": "Backpropagation is used to compute gradients in neural networks",
+      "correct": true
+    },
+    {
+      "id": "Q46",
+      "prompt": "Batch normalization slows down the training process",
+      "correct": false
+    },
+    {
+      "id": "Q47",
+      "prompt": "The bias-variance tradeoff describes model complexity issues",
+      "correct": true
+    },
+    {
+      "id": "Q48",
+      "prompt": "Ensemble methods like Random Forest use multiple decision trees",
+      "correct": true
+    },
+    {
+      "id": "Q49",
+      "prompt": "Gradient boosting builds trees sequentially to correct errors",
+      "correct": true
+    },
+    {
+      "id": "Q50",
+      "prompt": "K-Nearest Neighbors is a parametric model",
+      "correct": false
+    },
+    {
+      "id": "Q51",
+      "prompt": "Logistic regression can be used for binary classification",
+      "correct": true
+    },
+    {
+      "id": "Q52",
+      "prompt": "Cross-entropy loss is commonly used for regression tasks",
+      "correct": false
+    },
+    {
+      "id": "Q53",
+      "prompt": "Softmax activation normalizes outputs to a probability distribution",
+      "correct": true
+    },
+    {
+      "id": "Q54",
+      "prompt": "One-hot encoding is used to represent categorical variables",
+      "correct": true
+    },
+    {
+      "id": "Q55",
+      "prompt": "Dropout eliminates neurons permanently during training",
+      "correct": false
+    },
+    {
+      "id": "Q56",
+      "prompt": "Early stopping can prevent overfitting by halting training early",
+      "correct": true
+    },
+    {
+      "id": "Q57",
+      "prompt": "Learning rate scheduling adjusts the learning rate during training",
+      "correct": true
+    },
+    {
+      "id": "Q58",
+      "prompt": "ReLU activation can suffer from the vanishing gradient problem",
+      "correct": false
+    },
+    {
+      "id": "Q59",
+      "prompt": "Batch size determines the number of epochs",
+      "correct": false
+    },
+    {
+      "id": "Q60",
+      "prompt": "Stochastic gradient descent uses one sample per update",
+      "correct": true
+    },
+    {
+      "id": "Q61",
+      "prompt": "Supervised learning requires labeled data",
+      "correct": true
+    },
+    {
+      "id": "Q62",
+      "prompt": "Unsupervised learning always produces clusters",
+      "correct": false
+    },
+    {
+      "id": "Q63",
+      "prompt": "Gradient descent can converge to a global minimum for non-convex functions",
+      "correct": false
+    },
+    {
+      "id": "Q64",
+      "prompt": "Overfitting occurs when a model performs well on training but poorly on testing data",
+      "correct": true
+    },
+    {
+      "id": "Q65",
+      "prompt": "Regularization techniques like L1 and L2 help reduce overfitting",
+      "correct": true
+    },
+    {
+      "id": "Q66",
+      "prompt": "A decision tree can handle both categorical and numerical features",
+      "correct": true
+    },
+    {
+      "id": "Q67",
+      "prompt": "A deep neural network with more layers always performs better",
+      "correct": false
+    },
+    {
+      "id": "Q68",
+      "prompt": "Dropout is a regularization technique for neural networks",
+      "correct": true
+    },
+    {
+      "id": "Q69",
+      "prompt": "Support Vector Machines can solve non-linear problems using kernels",
+      "correct": true
+    },
+    {
+      "id": "Q70",
+      "prompt": "K-means clustering requires the number of clusters to be defined in advance",
+      "correct": true
+    },
+    {
+      "id": "Q71",
+      "prompt": "Principal Component Analysis is used for data classification",
+      "correct": false
+    },
+    {
+      "id": "Q72",
+      "prompt": "Reinforcement learning is a type of unsupervised learning",
+      "correct": false
+    },
+    {
+      "id": "Q73",
+      "prompt": "Convolutional Neural Networks are primarily used for image data",
+      "correct": true
+    },
+    {
+      "id": "Q74",
+      "prompt": "Recurrent Neural Networks cannot handle sequential data",
+      "correct": false
+    },
+    {
+      "id": "Q75",
+      "prompt": "Backpropagation is used to compute gradients in neural networks",
+      "correct": true
+    },
+    {
+      "id": "Q76",
+      "prompt": "Batch normalization slows down the training process",
+      "correct": false
+    },
+    {
+      "id": "Q77",
+      "prompt": "The bias-variance tradeoff describes model complexity issues",
+      "correct": true
+    },
+    {
+      "id": "Q78",
+      "prompt": "Ensemble methods like Random Forest use multiple decision trees",
+      "correct": true
+    },
+    {
+      "id": "Q79",
+      "prompt": "Gradient boosting builds trees sequentially to correct errors",
+      "correct": true
+    },
+    {
+      "id": "Q80",
+      "prompt": "K-Nearest Neighbors is a parametric model",
+      "correct": false
+    },
+    {
+      "id": "Q81",
+      "prompt": "Logistic regression can be used for binary classification",
+      "correct": true
+    },
+    {
+      "id": "Q82",
+      "prompt": "Cross-entropy loss is commonly used for regression tasks",
+      "correct": false
+    },
+    {
+      "id": "Q83",
+      "prompt": "Softmax activation normalizes outputs to a probability distribution",
+      "correct": true
+    },
+    {
+      "id": "Q84",
+      "prompt": "One-hot encoding is used to represent categorical variables",
+      "correct": true
+    },
+    {
+      "id": "Q85",
+      "prompt": "Dropout eliminates neurons permanently during training",
+      "correct": false
+    },
+    {
+      "id": "Q86",
+      "prompt": "Early stopping can prevent overfitting by halting training early",
+      "correct": true
+    },
+    {
+      "id": "Q87",
+      "prompt": "Learning rate scheduling adjusts the learning rate during training",
+      "correct": true
+    },
+    {
+      "id": "Q88",
+      "prompt": "ReLU activation can suffer from the vanishing gradient problem",
+      "correct": false
+    },
+    {
+      "id": "Q89",
+      "prompt": "Batch size determines the number of epochs",
+      "correct": false
+    },
+    {
+      "id": "Q90",
+      "prompt": "Stochastic gradient descent uses one sample per update",
+      "correct": true
+    },
+    {
+      "id": "Q91",
+      "prompt": "Supervised learning requires labeled data",
+      "correct": true
+    },
+    {
+      "id": "Q92",
+      "prompt": "Unsupervised learning always produces clusters",
+      "correct": false
+    },
+    {
+      "id": "Q93",
+      "prompt": "Gradient descent can converge to a global minimum for non-convex functions",
+      "correct": false
+    },
+    {
+      "id": "Q94",
+      "prompt": "Overfitting occurs when a model performs well on training but poorly on testing data",
+      "correct": true
+    },
+    {
+      "id": "Q95",
+      "prompt": "Regularization techniques like L1 and L2 help reduce overfitting",
+      "correct": true
+    },
+    {
+      "id": "Q96",
+      "prompt": "A decision tree can handle both categorical and numerical features",
+      "correct": true
+    },
+    {
+      "id": "Q97",
+      "prompt": "A deep neural network with more layers always performs better",
+      "correct": false
+    },
+    {
+      "id": "Q98",
+      "prompt": "Dropout is a regularization technique for neural networks",
+      "correct": true
+    },
+    {
+      "id": "Q99",
+      "prompt": "Support Vector Machines can solve non-linear problems using kernels",
+      "correct": true
+    },
+    {
+      "id": "Q100",
+      "prompt": "K-means clustering requires the number of clusters to be defined in advance",
+      "correct": true
+    }
+  ]
+}

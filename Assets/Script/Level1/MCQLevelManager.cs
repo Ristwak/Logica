@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -10,8 +11,7 @@ public class MCQQuestion
     public string id;
     public string prompt;
     public List<string> options;
-    public string correct;
-    public string aiLogic;
+    public string correct;          // aiLogic removed
 }
 
 [System.Serializable]
@@ -24,19 +24,26 @@ public class MCQLevelData
 
 public class MCQLevelManager : MonoBehaviour
 {
+    [Header("UI Elements")]
     public TextMeshProUGUI questionText;
     public TextMeshProUGUI aiAnswerText;
     public TextMeshProUGUI feedbackText;
-    public TextMeshProUGUI justificationText;
-    public GameObject feedbackPanel;
     public Button nextButton;
     public TextMeshProUGUI questionCounter;
 
-    public GameObject optionButtonPrefab;       // 🔹 Prefab of the button
-    public Transform optionsContainer;          // 🔹 Parent with VerticalLayoutGroup
+    [Header("Options Container")]
+    public GameObject optionButtonPrefab;
+    public Transform optionsContainer;
+
+    [Header("AI Settings")]
+    public float aiMinThinkTime = 1.0f;
+    public float aiMaxThinkTime = 3.0f;
+    [Range(0f,1f)]
+    public float aiCorrectProbability = 0.8f;
 
     private List<MCQQuestion> questions;
     private int currentIndex = 0;
+    private string playerChoice;
 
     void Start()
     {
@@ -55,63 +62,93 @@ public class MCQLevelManager : MonoBehaviour
     void DisplayQuestion()
     {
         var q = questions[currentIndex];
-        questionText.text = q.prompt;
-        aiAnswerText.text = "";
-        questionCounter.text = $"Q {currentIndex + 1} / {questions.Count}";
-        feedbackPanel.SetActive(false);
+        questionText.text       = q.prompt;
+        aiAnswerText.text       = "";
+        feedbackText.text       = "";            // Clear previous feedback
+        questionCounter.text    = $"Q {currentIndex + 1} / {questions.Count}";
 
         ClearOptions();
+        nextButton.interactable = false;          // Disable Next until feedback shown
 
         foreach (var option in q.options)
         {
-            GameObject buttonGO = Instantiate(optionButtonPrefab, optionsContainer);
-            buttonGO.SetActive(true);
+            var btnGO = Instantiate(optionButtonPrefab, optionsContainer);
+            var label = btnGO.GetComponentInChildren<TextMeshProUGUI>();
+            var button = btnGO.GetComponent<Button>();
 
-            var button = buttonGO.GetComponent<Button>();
-            var label = buttonGO.GetComponentInChildren<TextMeshProUGUI>();
             label.text = option;
-
-            string chosen = option; // local copy for lambda
-            button.onClick.AddListener(() => CheckAnswer(chosen));
+            button.interactable = true;
+            string chosen = option;
+            button.onClick.AddListener(() => OnOptionSelected(chosen));
         }
     }
 
     void ClearOptions()
     {
         foreach (Transform child in optionsContainer)
-        {
             Destroy(child.gameObject);
-        }
     }
 
-    void CheckAnswer(string selected)
+    void OnOptionSelected(string chosen)
     {
-        var q = questions[currentIndex];
-        bool isCorrect = selected == q.correct;
-
-        feedbackText.text = isCorrect ? "✅ Correct!" : "❌ Incorrect.";
-        justificationText.text = q.aiLogic;
-        aiAnswerText.text = $"🧠 AI says: {q.correct}";
-        feedbackPanel.SetActive(true);
-
-        // Optionally disable all buttons after answer
+        playerChoice = chosen;
+        // Disable all option buttons
         foreach (Transform child in optionsContainer)
         {
             var btn = child.GetComponent<Button>();
             if (btn != null) btn.interactable = false;
         }
+
+        // Show AI is thinking
+        aiAnswerText.text = "🧠 AI is thinking...";
+
+        // Start AI response
+        StartCoroutine(AIResponseCoroutine());
+    }
+
+    IEnumerator AIResponseCoroutine()
+    {
+        // Random thinking time
+        float thinkTime = Random.Range(aiMinThinkTime, aiMaxThinkTime);
+        yield return new WaitForSeconds(thinkTime);
+
+        var q = questions[currentIndex];
+        string aiChoice;
+
+        // Determine AI answer with given probability
+        if (Random.value <= aiCorrectProbability)
+        {
+            aiChoice = q.correct;
+        }
+        else
+        {
+            // pick a random wrong option
+            List<string> wrongs = new List<string>(q.options);
+            wrongs.Remove(q.correct);
+            aiChoice = wrongs[Random.Range(0, wrongs.Count)];
+        }
+
+        // Display AI answer
+        aiAnswerText.text = $"🧠 AI says: {aiChoice}";
+
+        // Provide combined feedback
+        bool playerCorrect = (playerChoice == q.correct);
+        bool aiCorrect     = (aiChoice    == q.correct);
+
+        feedbackText.text =
+            $"{(playerCorrect ? "✅ You: Correct" : "❌ You: Wrong")}\n" +
+            $"{(aiCorrect     ? "🤖✅ AI: Correct" : "🤖❌ AI: Wrong")}";
+
+        // Enable Next button after feedback
+        nextButton.interactable = true;
     }
 
     public void OnNextQuestion()
     {
         currentIndex++;
         if (currentIndex >= questions.Count)
-        {
             UnityEngine.SceneManagement.SceneManager.LoadScene("HomeScene");
-        }
         else
-        {
             DisplayQuestion();
-        }
     }
 }

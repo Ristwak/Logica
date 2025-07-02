@@ -4,12 +4,14 @@ using UnityEngine.SceneManagement;
 public class MainMenuManager : MonoBehaviour
 {
     public GameObject menuPanel;
+    public GameObject aboutPanel;
     public GameObject loadingPanel;
 
     void Start()
     {
         menuPanel.SetActive(true);
         loadingPanel.SetActive(false);
+        aboutPanel.SetActive(false);
     }
 
     public void OnStartGame()
@@ -17,7 +19,7 @@ public class MainMenuManager : MonoBehaviour
         // Load first level or scene
         Debug.Log("Starting Game");
         menuPanel.SetActive(false);
-        SceneManager.LoadScene("HomeScene");
+        SceneManager.LoadScene("GameScene");
         loadingPanel.SetActive(true);
         menuPanel.SetActive(false);
         SoundManager.Instance.PlaySound("click");
@@ -25,25 +27,21 @@ public class MainMenuManager : MonoBehaviour
 
     public void OnLearn() {
         // Open tutorial panel
-        Debug.Log("Learn panel opened.");
-        loadingPanel.SetActive(true);
         menuPanel.SetActive(false);
+        aboutPanel.SetActive(true);
+        SoundManager.Instance.PlaySound("click");
+    }
+    
+    public void OnBack()
+    {
+        // Return to main menu
+        aboutPanel.SetActive(false);
+        menuPanel.SetActive(true);
         SoundManager.Instance.PlaySound("click");
     }
 
-    public void OnProgress() {
-        // Open progress tracking panel
-        Debug.Log("Progress panel opened.");
-        SoundManager.Instance.PlaySound("click");
-    }
-
-    public void OnSettings() {
-        // Open settings panel
-        Debug.Log("Settings panel opened.");
-        SoundManager.Instance.PlaySound("click");
-    }
-
-    public void OnAbout() {
+    public void OnAbout()
+    {
         // Open AI history info
         Debug.Log("About AI opened.");
         SoundManager.Instance.PlaySound("click");
