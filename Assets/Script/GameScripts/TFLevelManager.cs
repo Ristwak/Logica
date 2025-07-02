@@ -25,10 +25,11 @@ public class TFLevelManager : MonoBehaviour
 {
     [Header("UI References")]
     public TextMeshProUGUI questionText;
-    public TextMeshProUGUI aiAnswerText;
     public TextMeshProUGUI timerText;
-    public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI questionCounter;
+    public TextMeshProUGUI humanScoreText;
+    public TextMeshProUGUI aIScoreText;
+    public GameObject trueFalsePanel;
+    public GameObject exitPanel;
 
     [Header("Buttons")]
     public Button trueButton;
@@ -37,20 +38,34 @@ public class TFLevelManager : MonoBehaviour
     [Header("Settings")]
     public float roundTime = 10f;
     public int correctPoints = 10;
-    public int wrongPoints = -4;
-    [Range(0f,1f)] public float aiCorrectProbability = 0.8f;
-    public float autoNextDelay = 2f; // Time before auto-advance
+    [Range(0f, 1f)] public float aiCorrectProbability = 0.8f;
+    public float autoNextDelay = 2f;
+
+    [Header("Visual Feedback")]
+    public Color blinkColor = Color.red;
+    public float blinkDuration = 0.4f;
+
+    private Color defaultHumanColor;
+    private Color defaultAIColor;
 
     private List<TFQuestion> questions;
     private int currentIndex = 0;
     private float timeRemaining;
     private bool answered = false;
-    private int score = 0;
+    private int humanScore = 0;
+    private int aIScore = 0;
 
     void Start()
     {
+        trueFalsePanel.SetActive(true);
+        exitPanel.SetActive(false);
         LoadQuestions();
-        score = 0;
+        humanScore = 0;
+        aIScore = 0;
+
+        defaultHumanColor = humanScoreText.color;
+        defaultAIColor = aIScoreText.color;
+
         UpdateScoreText();
         DisplayQuestion();
     }
@@ -90,8 +105,6 @@ public class TFLevelManager : MonoBehaviour
         var q = questions[currentIndex];
 
         questionText.text = q.prompt;
-        aiAnswerText.text = string.Empty;
-        questionCounter.text = $"Q {currentIndex + 1}/{questions.Count}";
 
         timeRemaining = roundTime;
         answered = false;
@@ -113,28 +126,36 @@ public class TFLevelManager : MonoBehaviour
 
         var q = questions[currentIndex];
         bool isPlayerCorrect = (selected == q.correct);
-
-        // AI decision
         bool aiSelected = Random.value <= aiCorrectProbability ? q.correct : !q.correct;
         bool isAICorrect = (aiSelected == q.correct);
 
-        // Update score
-        score += isPlayerCorrect ? correctPoints : wrongPoints;
+        if (isPlayerCorrect)
+        {
+            humanScore += correctPoints;
+            StartCoroutine(BlinkScoreText(humanScoreText, defaultHumanColor));
+        }
+
+        if (isAICorrect)
+        {
+            aIScore += correctPoints;
+            StartCoroutine(BlinkScoreText(aIScoreText, defaultAIColor));
+        }
+
         UpdateScoreText();
 
-        // Display results
-        string playerText = selected ? "True" : "False";
-        string aiText = aiSelected ? "True" : "False";
-        aiAnswerText.text =
-            $"You: {playerText} ({(isPlayerCorrect ? "Correct" : "Wrong")})\n" +
-            $"🧠 AI: {aiText} ({(isAICorrect ? "Correct" : "Wrong")})";
+        Debug.Log($"Player answered: {(isPlayerCorrect ? "Correct" : "Wrong")} | AI answered: {(isAICorrect ? "Correct" : "Wrong")}");
 
-        // Disable inputs
         trueButton.interactable = false;
         falseButton.interactable = false;
 
-        // Auto advance
         StartCoroutine(AutoAdvanceNext());
+    }
+
+    System.Collections.IEnumerator BlinkScoreText(TextMeshProUGUI text, Color originalColor)
+    {
+        text.color = blinkColor;
+        yield return new WaitForSeconds(blinkDuration);
+        text.color = originalColor;
     }
 
     System.Collections.IEnumerator AutoAdvanceNext()
@@ -164,7 +185,11 @@ public class TFLevelManager : MonoBehaviour
 
     void UpdateScoreText()
     {
-        if (scoreText != null)
-            scoreText.text = $"Score: {score}";
+        if (humanScoreText != null)
+            humanScoreText.text = $"You: {humanScore}";
+
+        if (aIScoreText != null)
+            aIScoreText.text = $"AI: {aIScore}";
     }
+
 }
