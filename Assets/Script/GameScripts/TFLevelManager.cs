@@ -135,8 +135,6 @@ public class TFLevelManager : MonoBehaviour
 
         DisplayQuestion();
     }
-
-
     void DisplayQuestion()
     {
         var q = questions[currentIndex];
