@@ -20,11 +20,7 @@ Compete head-to-head against an AI bot in logic puzzles that test human intuitio
 
 ## 🚀 Game Features
 
-- 🧩 Multiple question formats:
-  - Level 1: MCQs
-  - Level 2: True/False
-  - Level 3: Drag and Drop
-  - More formats to come!
+- 🧩 Multiple question formats
 - 🤖 AI Bot opponent with rule-based logic (not learning-based)
 - 🧮 Scoring System with visual feedback
 - 📊 Real-time timer and scoring for human vs AI
