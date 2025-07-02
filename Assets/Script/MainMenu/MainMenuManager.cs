@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
@@ -51,6 +52,7 @@ public class MainMenuManager : MonoBehaviour
     {
         // Open AI history info
         Debug.Log("Quitting Game");
+        Application.Quit();
         SoundManager.Instance.PlaySound("click");
     }
 }
