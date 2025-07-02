@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.IO;
+using System.Collections;
 
 [System.Serializable]
 public class TFQuestion
@@ -85,12 +86,45 @@ public class TFLevelManager : MonoBehaviour
 
     void LoadQuestions()
     {
-        string path = Path.Combine(Application.streamingAssetsPath, "Level02_true_false_ai_ml_100.json");
-        string json = File.ReadAllText(path);
+        StartCoroutine(LoadQuestionsFromStreamingAssets());
+    }
+
+    IEnumerator LoadQuestionsFromStreamingAssets()
+    {
+        string fileName = "Level02_true_false_ai_ml_100.json";
+        string filePath = Path.Combine(Application.streamingAssetsPath, fileName);
+        string json = "";
+
+#if UNITY_ANDROID
+        using (UnityEngine.Networking.UnityWebRequest request = UnityEngine.Networking.UnityWebRequest.Get(filePath))
+        {
+            yield return request.SendWebRequest();
+
+            if (request.isNetworkError || request.isHttpError)
+
+            {
+                Debug.LogError("Failed to load JSON on Android: " + request.error);
+                yield break;
+            }
+
+            json = request.downloadHandler.text;
+        }
+#else
+    if (File.Exists(filePath))
+    {
+        json = File.ReadAllText(filePath);
+    }
+    else
+    {
+        Debug.LogError("File not found at: " + filePath);
+        yield break;
+    }
+#endif
+
         TFLevelData data = JsonUtility.FromJson<TFLevelData>(json);
+        questions = data.questions;
 
         // Shuffle questions
-        questions = data.questions;
         for (int i = 0; i < questions.Count; i++)
         {
             int j = Random.Range(i, questions.Count);
@@ -98,7 +132,10 @@ public class TFLevelManager : MonoBehaviour
             questions[i] = questions[j];
             questions[j] = tmp;
         }
+
+        DisplayQuestion();
     }
+
 
     void DisplayQuestion()
     {
