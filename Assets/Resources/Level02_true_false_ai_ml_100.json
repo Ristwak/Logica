@@ -1,0 +1,57 @@
+{
+  "levelId": 2,
+  "title": "True or False: AI & ML Basics",
+  "format": "true_false",
+  "questions": [
+    {
+      "id": "Q1",
+      "prompt": "i;Zosf{kr f'k{k.k ds fy, yscy;qä MsVk dh vko';drk gksrh gS",
+      "correct": true
+    },
+    {
+      "id": "Q2",
+      "prompt": "vi;Zosf{kr f'k{k.k ges'kk DyLVj mRiUu djrk gS",
+      "correct": false
+    },
+    {
+      "id": "Q3",
+      "prompt": "xzsfM,aV vojksg.k xSj&mÙky dk;ksZa ds fy, oSfÜod U;wure rd vfHklfjr gks ldrk gS",
+      "correct": false
+    },
+    {
+      "id": "Q4",
+      "prompt": "vksojfQfVax rc gksrh gS tc e‚My çf'k{k.k ij vPNk çn'kZu djrk gS ysfdu ijh{k.k MsVk ij [kjkc çn'kZu djrk gS",
+      "correct": true
+    },
+    {
+      "id": "Q5",
+      "prompt": "L1 vkSj L2 tSlh fu;ferhdj.k rduhdsa vksojfQfVax dks de djus esa enn djrh gSa",
+      "correct": true
+    },
+    {
+      "id": "Q6",
+      "prompt": "fu.kZ; o`{k Js.khc) vkSj la[;kRed nksuksa fo'ks\"krkvksa dks laHkky ldrk gS",
+      "correct": true
+    },
+    {
+      "id": "Q7",
+      "prompt": "vfèkd ijrksa okyk xgjk raf=dk usVodZ ges'kk csgrj çn'kZu djrk gS",
+      "correct": false
+    },
+    {
+      "id": "Q8",
+      "prompt": "Mª‚ivkmV raf=dk usVodZ ds fy, ,d fu;ferhdj.k rduhd gS",
+      "correct": true
+    },
+    {
+      "id": "Q9",
+      "prompt": "liksVZ osDVj e'khusa duZsy dk mi;ksx djds xSj&jSf[kd leL;kvksa dks gy dj ldrh gSa",
+      "correct": true
+    },
+    {
+      "id": "Q10",
+      "prompt": "ds&ehUl DyLVfjax ds fy, DyLVjksa dh la[;k igys ls fuèkkZfjr djuk vko';d gS",
+      "correct": true
+    }
+  ]
+}

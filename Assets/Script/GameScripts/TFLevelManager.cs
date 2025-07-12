@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine.UI;
 using System.IO;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class TFQuestion
@@ -31,6 +32,7 @@ public class TFLevelManager : MonoBehaviour
     public TextMeshProUGUI aIScoreText;
     public GameObject trueFalsePanel;
     public GameObject exitPanel;
+    public GameObject comingSoonPanel;
 
     [Header("Buttons")]
     public Button trueButton;
@@ -60,33 +62,29 @@ public class TFLevelManager : MonoBehaviour
     {
         trueFalsePanel.SetActive(true);
         exitPanel.SetActive(false);
-        LoadQuestions();
-        humanScore = 0;
-        aIScore = 0;
+        comingSoonPanel.SetActive(false);
 
         defaultHumanColor = humanScoreText.color;
         defaultAIColor = aIScoreText.color;
 
+        humanScore = 0;
+        aIScore = 0;
         UpdateScoreText();
-        DisplayQuestion();
+
+        StartCoroutine(LoadQuestionsFromStreamingAssets());
     }
 
     void Update()
     {
-        if (answered) return;
+        if (answered || questions == null || questions.Count == 0) return;
 
         timeRemaining -= Time.deltaTime;
         UpdateTimerText();
 
         if (timeRemaining <= 0f)
         {
-            CheckAnswer(false);
+            CheckAnswer(false); // default answer if time runs out
         }
-    }
-
-    void LoadQuestions()
-    {
-        StartCoroutine(LoadQuestionsFromStreamingAssets());
     }
 
     IEnumerator LoadQuestionsFromStreamingAssets()
@@ -100,45 +98,58 @@ public class TFLevelManager : MonoBehaviour
         {
             yield return request.SendWebRequest();
 
-            if (request.isNetworkError || request.isHttpError)
-
+            if (request.result != UnityEngine.Networking.UnityWebRequest.Result.Success)
             {
                 Debug.LogError("Failed to load JSON on Android: " + request.error);
+                comingSoonPanel.SetActive(true);
+                trueFalsePanel.SetActive(false);
                 yield break;
             }
 
             json = request.downloadHandler.text;
         }
 #else
-    if (File.Exists(filePath))
-    {
-        json = File.ReadAllText(filePath);
-    }
-    else
-    {
-        Debug.LogError("File not found at: " + filePath);
-        yield break;
-    }
+        if (File.Exists(filePath))
+        {
+            json = File.ReadAllText(filePath);
+        }
+        else
+        {
+            Debug.LogError("File not found at: " + filePath);
+            comingSoonPanel.SetActive(true);
+            trueFalsePanel.SetActive(false);
+            yield break;
+        }
 #endif
 
         TFLevelData data = JsonUtility.FromJson<TFLevelData>(json);
         questions = data.questions;
 
+        if (questions == null || questions.Count < 1)
+        {
+            Debug.LogWarning("No questions found. Showing Coming Soon panel.");
+            comingSoonPanel.SetActive(true);
+            trueFalsePanel.SetActive(false);
+            yield break;
+        }
+
         // Shuffle questions
         for (int i = 0; i < questions.Count; i++)
         {
             int j = Random.Range(i, questions.Count);
-            var tmp = questions[i];
+            var temp = questions[i];
             questions[i] = questions[j];
-            questions[j] = tmp;
+            questions[j] = temp;
         }
 
         DisplayQuestion();
     }
+
     void DisplayQuestion()
     {
-        var q = questions[currentIndex];
+        if (questions == null || currentIndex >= questions.Count) return;
 
+        TFQuestion q = questions[currentIndex];
         questionText.text = q.prompt;
 
         timeRemaining = roundTime;
@@ -159,7 +170,10 @@ public class TFLevelManager : MonoBehaviour
         if (answered) return;
         answered = true;
 
+        SoundManager.Instance?.PlaySound("Click");
+
         var q = questions[currentIndex];
+
         bool isPlayerCorrect = (selected == q.correct);
         bool aiSelected = Random.value <= aiCorrectProbability ? q.correct : !q.correct;
         bool isAICorrect = (aiSelected == q.correct);
@@ -178,7 +192,7 @@ public class TFLevelManager : MonoBehaviour
 
         UpdateScoreText();
 
-        Debug.Log($"Player answered: {(isPlayerCorrect ? "Correct" : "Wrong")} | AI answered: {(isAICorrect ? "Correct" : "Wrong")}");
+        Debug.Log($"Player: {(isPlayerCorrect ? "Correct" : "Wrong")} | AI: {(isAICorrect ? "Correct" : "Wrong")}");
 
         trueButton.interactable = false;
         falseButton.interactable = false;
@@ -186,14 +200,14 @@ public class TFLevelManager : MonoBehaviour
         StartCoroutine(AutoAdvanceNext());
     }
 
-    System.Collections.IEnumerator BlinkScoreText(TextMeshProUGUI text, Color originalColor)
+    IEnumerator BlinkScoreText(TextMeshProUGUI text, Color originalColor)
     {
         text.color = blinkColor;
         yield return new WaitForSeconds(blinkDuration);
         text.color = originalColor;
     }
 
-    System.Collections.IEnumerator AutoAdvanceNext()
+    IEnumerator AutoAdvanceNext()
     {
         yield return new WaitForSeconds(autoNextDelay);
         MoveToNextQuestion();
@@ -204,7 +218,7 @@ public class TFLevelManager : MonoBehaviour
         currentIndex++;
         if (currentIndex >= questions.Count)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("HomePanelScene");
+            comingSoonPanel.SetActive(true);
         }
         else
         {
@@ -215,7 +229,7 @@ public class TFLevelManager : MonoBehaviour
     void UpdateTimerText()
     {
         if (timerText != null)
-            timerText.text = $"Time: {Mathf.CeilToInt(timeRemaining)}s";
+            timerText.text = Mathf.CeilToInt(timeRemaining).ToString();
     }
 
     void UpdateScoreText()
@@ -226,5 +240,4 @@ public class TFLevelManager : MonoBehaviour
         if (aIScoreText != null)
             aIScoreText.text = $"AI: {aIScore}";
     }
-
 }
