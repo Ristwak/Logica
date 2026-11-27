@@ -1,12 +1,13 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using UnityEngine.Networking;
 using TMPro;
 using UnityEngine.UI;
-using System.IO;
-using System.Collections;
-using UnityEngine.SceneManagement;
 
-[System.Serializable]
+[Serializable]
 public class TFQuestion
 {
     public string id;
@@ -15,7 +16,7 @@ public class TFQuestion
     public string aiLogic;
 }
 
-[System.Serializable]
+[Serializable]
 public class TFLevelData
 {
     public string title;
@@ -52,14 +53,24 @@ public class TFLevelManager : MonoBehaviour
     private Color defaultAIColor;
 
     private List<TFQuestion> questions;
-    private int currentIndex = 0;
+    private int currentIndex;
     private float timeRemaining;
-    private bool answered = false;
-    private int humanScore = 0;
-    private int aIScore = 0;
+    private bool answered;
+    private int humanScore;
+    private int aIScore;
 
-    void Start()
+    private Coroutine autoAdvanceCoroutine;
+    private Coroutine humanBlinkCoroutine;
+    private Coroutine aiBlinkCoroutine;
+
+    private const string QuestionFileName =
+        "Level02_true_false_ai_ml_100.json";
+
+    private void Start()
     {
+        if (!ValidateReferences())
+            return;
+
         trueFalsePanel.SetActive(true);
         exitPanel.SetActive(false);
         comingSoonPanel.SetActive(false);
@@ -69,91 +80,179 @@ public class TFLevelManager : MonoBehaviour
 
         humanScore = 0;
         aIScore = 0;
+        currentIndex = 0;
+        answered = true;
+
         UpdateScoreText();
 
         StartCoroutine(LoadQuestionsFromStreamingAssets());
     }
 
-    void Update()
+    private void Update()
     {
-        if (answered || questions == null || questions.Count == 0) return;
+        if (answered || questions == null ||
+            currentIndex >= questions.Count)
+            return;
 
         timeRemaining -= Time.deltaTime;
         UpdateTimerText();
 
         if (timeRemaining <= 0f)
         {
-            CheckAnswer(false); // default answer if time runs out
+            timeRemaining = 0f;
+            UpdateTimerText();
+            CheckAnswer(false);
         }
     }
 
-    IEnumerator LoadQuestionsFromStreamingAssets()
+    private bool ValidateReferences()
     {
-        string fileName = "Level02_true_false_ai_ml_100.json";
-        string filePath = Path.Combine(Application.streamingAssetsPath, fileName);
-        string json = "";
+        bool valid = true;
 
-#if UNITY_ANDROID
-        using (UnityEngine.Networking.UnityWebRequest request = UnityEngine.Networking.UnityWebRequest.Get(filePath))
+        if (questionText == null ||
+            timerText == null ||
+            humanScoreText == null ||
+            aIScoreText == null ||
+            trueFalsePanel == null ||
+            exitPanel == null ||
+            comingSoonPanel == null ||
+            trueButton == null ||
+            falseButton == null)
+        {
+            Debug.LogError(
+                "TFLevelManager: One or more Inspector references are missing."
+            );
+
+            valid = false;
+        }
+
+        if (roundTime <= 0f)
+        {
+            Debug.LogError(
+                "TFLevelManager: Round time must be greater than zero."
+            );
+
+            valid = false;
+        }
+
+        return valid;
+    }
+
+    private IEnumerator LoadQuestionsFromStreamingAssets()
+    {
+        string filePath = Path.Combine(
+            Application.streamingAssetsPath,
+            QuestionFileName
+        );
+
+        string json = string.Empty;
+
+#if UNITY_ANDROID && !UNITY_EDITOR
+        using (UnityWebRequest request = UnityWebRequest.Get(filePath))
         {
             yield return request.SendWebRequest();
 
-            if (request.result != UnityEngine.Networking.UnityWebRequest.Result.Success)
+            if (request.result != UnityWebRequest.Result.Success)
             {
-                Debug.LogError("Failed to load JSON on Android: " + request.error);
-                comingSoonPanel.SetActive(true);
-                trueFalsePanel.SetActive(false);
+                Debug.LogError(
+                    "Failed to load JSON: " + request.error
+                );
+
+                ShowComingSoonPanel();
                 yield break;
             }
 
             json = request.downloadHandler.text;
         }
 #else
-        if (File.Exists(filePath))
+        if (!File.Exists(filePath))
+        {
+            Debug.LogError(
+                "Question file not found: " + filePath
+            );
+
+            ShowComingSoonPanel();
+            yield break;
+        }
+
+        try
         {
             json = File.ReadAllText(filePath);
         }
-        else
+        catch (Exception exception)
         {
-            Debug.LogError("File not found at: " + filePath);
-            comingSoonPanel.SetActive(true);
-            trueFalsePanel.SetActive(false);
+            Debug.LogError(
+                "Failed to read question file: " + exception.Message
+            );
+
+            ShowComingSoonPanel();
             yield break;
         }
 #endif
 
-        TFLevelData data = JsonUtility.FromJson<TFLevelData>(json);
-        questions = data.questions;
+        TFLevelData data = null;
 
-        if (questions == null || questions.Count < 1)
+        try
         {
-            Debug.LogWarning("No questions found. Showing Coming Soon panel.");
-            comingSoonPanel.SetActive(true);
-            trueFalsePanel.SetActive(false);
+            data = JsonUtility.FromJson<TFLevelData>(json);
+        }
+        catch (Exception exception)
+        {
+            Debug.LogError(
+                "Question JSON parsing failed: " + exception.Message
+            );
+
+            ShowComingSoonPanel();
             yield break;
         }
 
-        // Shuffle questions
-        for (int i = 0; i < questions.Count; i++)
+        if (data == null ||
+            data.questions == null ||
+            data.questions.Count == 0)
         {
-            int j = Random.Range(i, questions.Count);
-            var temp = questions[i];
-            questions[i] = questions[j];
-            questions[j] = temp;
+            Debug.LogWarning(
+                "No valid questions found in the JSON file."
+            );
+
+            ShowComingSoonPanel();
+            yield break;
         }
 
+        questions = data.questions;
+
+        ShuffleQuestions();
         DisplayQuestion();
     }
 
-    void DisplayQuestion()
+    private void ShuffleQuestions()
     {
-        if (questions == null || currentIndex >= questions.Count) return;
+        for (int i = questions.Count - 1; i > 0; i--)
+        {
+            int randomIndex = UnityEngine.Random.Range(0, i + 1);
 
-        TFQuestion q = questions[currentIndex];
-        questionText.text = q.prompt;
+            TFQuestion temp = questions[i];
+            questions[i] = questions[randomIndex];
+            questions[randomIndex] = temp;
+        }
+    }
+
+    private void DisplayQuestion()
+    {
+        if (questions == null ||
+            currentIndex < 0 ||
+            currentIndex >= questions.Count)
+        {
+            ShowComingSoonPanel();
+            return;
+        }
+
+        TFQuestion question = questions[currentIndex];
+
+        questionText.text = question.prompt;
 
         timeRemaining = roundTime;
         answered = false;
+
         UpdateTimerText();
 
         trueButton.interactable = true;
@@ -161,83 +260,157 @@ public class TFLevelManager : MonoBehaviour
 
         trueButton.onClick.RemoveAllListeners();
         falseButton.onClick.RemoveAllListeners();
-        trueButton.onClick.AddListener(() => CheckAnswer(true));
-        falseButton.onClick.AddListener(() => CheckAnswer(false));
+
+        trueButton.onClick.AddListener(
+            () => CheckAnswer(true)
+        );
+
+        falseButton.onClick.AddListener(
+            () => CheckAnswer(false)
+        );
     }
 
-    void CheckAnswer(bool selected)
+    private void CheckAnswer(bool selected)
     {
-        if (answered) return;
+        if (answered ||
+            questions == null ||
+            currentIndex >= questions.Count)
+            return;
+
         answered = true;
 
         SoundManager.Instance?.PlaySound("Click");
 
-        var q = questions[currentIndex];
+        TFQuestion question = questions[currentIndex];
 
-        bool isPlayerCorrect = (selected == q.correct);
-        bool aiSelected = Random.value <= aiCorrectProbability ? q.correct : !q.correct;
-        bool isAICorrect = (aiSelected == q.correct);
+        bool isPlayerCorrect = selected == question.correct;
+
+        bool aiSelected =
+            UnityEngine.Random.value <= aiCorrectProbability
+                ? question.correct
+                : !question.correct;
+
+        bool isAICorrect = aiSelected == question.correct;
 
         if (isPlayerCorrect)
         {
             humanScore += correctPoints;
-            StartCoroutine(BlinkScoreText(humanScoreText, defaultHumanColor));
+
+            if (humanBlinkCoroutine != null)
+                StopCoroutine(humanBlinkCoroutine);
+
+            humanBlinkCoroutine = StartCoroutine(
+                BlinkScoreText(humanScoreText, defaultHumanColor)
+            );
         }
 
         if (isAICorrect)
         {
             aIScore += correctPoints;
-            StartCoroutine(BlinkScoreText(aIScoreText, defaultAIColor));
+
+            if (aiBlinkCoroutine != null)
+                StopCoroutine(aiBlinkCoroutine);
+
+            aiBlinkCoroutine = StartCoroutine(
+                BlinkScoreText(aIScoreText, defaultAIColor)
+            );
         }
 
         UpdateScoreText();
 
-        Debug.Log($"Player: {(isPlayerCorrect ? "Correct" : "Wrong")} | AI: {(isAICorrect ? "Correct" : "Wrong")}");
+        Debug.Log(
+            $"Player: {(isPlayerCorrect ? "Correct" : "Wrong")} | " +
+            $"AI: {(isAICorrect ? "Correct" : "Wrong")}"
+        );
 
         trueButton.interactable = false;
         falseButton.interactable = false;
 
-        StartCoroutine(AutoAdvanceNext());
+        if (autoAdvanceCoroutine != null)
+            StopCoroutine(autoAdvanceCoroutine);
+
+        autoAdvanceCoroutine = StartCoroutine(AutoAdvanceNext());
     }
 
-    IEnumerator BlinkScoreText(TextMeshProUGUI text, Color originalColor)
+    private IEnumerator BlinkScoreText(
+        TextMeshProUGUI text,
+        Color originalColor)
     {
+        if (text == null)
+            yield break;
+
         text.color = blinkColor;
+
         yield return new WaitForSeconds(blinkDuration);
+
         text.color = originalColor;
     }
 
-    IEnumerator AutoAdvanceNext()
+    private IEnumerator AutoAdvanceNext()
     {
         yield return new WaitForSeconds(autoNextDelay);
+
         MoveToNextQuestion();
     }
 
-    void MoveToNextQuestion()
+    private void MoveToNextQuestion()
     {
         currentIndex++;
-        if (currentIndex >= questions.Count)
+
+        if (questions == null || currentIndex >= questions.Count)
         {
-            comingSoonPanel.SetActive(true);
+            ShowComingSoonPanel();
+            return;
         }
-        else
-        {
-            DisplayQuestion();
-        }
+
+        DisplayQuestion();
     }
 
-    void UpdateTimerText()
+    private void ShowComingSoonPanel()
+    {
+        if (comingSoonPanel != null)
+            comingSoonPanel.SetActive(true);
+
+        if (trueFalsePanel != null)
+            trueFalsePanel.SetActive(false);
+    }
+
+    private void UpdateTimerText()
     {
         if (timerText != null)
-            timerText.text = Mathf.CeilToInt(timeRemaining).ToString();
+        {
+            timerText.text =
+                Mathf.CeilToInt(timeRemaining).ToString();
+        }
     }
 
-    void UpdateScoreText()
+    private void UpdateScoreText()
     {
         if (humanScoreText != null)
             humanScoreText.text = $"You: {humanScore}";
 
         if (aIScoreText != null)
             aIScoreText.text = $"AI: {aIScore}";
+    }
+
+    private void OnDisable()
+    {
+        if (autoAdvanceCoroutine != null)
+        {
+            StopCoroutine(autoAdvanceCoroutine);
+            autoAdvanceCoroutine = null;
+        }
+
+        if (humanBlinkCoroutine != null)
+        {
+            StopCoroutine(humanBlinkCoroutine);
+            humanBlinkCoroutine = null;
+        }
+
+        if (aiBlinkCoroutine != null)
+        {
+            StopCoroutine(aiBlinkCoroutine);
+            aiBlinkCoroutine = null;
+        }
     }
 }

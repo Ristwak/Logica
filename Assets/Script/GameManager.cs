@@ -1,35 +1,44 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("UI Panels")]
     public GameObject trueFalsePanel;
     public GameObject exitPanel;
     public GameObject comingSoonPanel;
 
-    private bool isComingSoonActive = false;
+    private bool isComingSoonActive;
 
-    void Start()
+    private void Start()
     {
-        trueFalsePanel.SetActive(true);
-        exitPanel.SetActive(false);
+        if (trueFalsePanel != null)
+            trueFalsePanel.SetActive(true);
+
+        if (exitPanel != null)
+            exitPanel.SetActive(false);
     }
 
-    void Update()
+    private void Update()
     {
-        if (comingSoonPanel.activeSelf)
-            isComingSoonActive = true;
-        if (Input.GetKeyDown(KeyCode.Escape)) // Android back button
+        if (comingSoonPanel != null &&
+            comingSoonPanel.activeSelf)
         {
-            if (!exitPanel.activeSelf)
+            isComingSoonActive = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (exitPanel != null && !exitPanel.activeSelf)
             {
                 exitPanel.SetActive(true);
-                comingSoonPanel.SetActive(false);
+
+                if (comingSoonPanel != null)
+                    comingSoonPanel.SetActive(false);
             }
         }
 
-        if (exitPanel.activeSelf)
+        if (exitPanel != null && exitPanel.activeSelf)
         {
             Time.timeScale = 0f;
         }
@@ -37,22 +46,26 @@ public class GameManager : MonoBehaviour
 
     public void OnExitYes()
     {
-        SoundManager.Instance.PlaySound("Click");
+        SoundManager.Instance?.PlaySound("Click");
+
         Application.Quit();
+
         Debug.Log("Game closed.");
     }
 
     public void OnExitNo()
     {
         SoundManager.Instance?.PlaySound("Click");
-        if(isComingSoonActive)
+
+        Time.timeScale = 1f;
+
+        if (isComingSoonActive)
         {
             SceneManager.LoadScene("MenuScene");
+            return;
         }
-        else
-        {
+
+        if (exitPanel != null)
             exitPanel.SetActive(false);
-        }
-        Time.timeScale = 1f;
     }
 }
