@@ -19,15 +19,16 @@ public class SoundManager : MonoBehaviour
     [Range(0f, 1f)] public float musicVolume = 0.5f;
     [Range(0f, 1f)] public float sfxVolume = 1.0f;
 
+    private Coroutine musicFadeCoroutine;
+
     private void Awake()
     {
-        // Singleton pattern
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else
+        else if (Instance != this)
         {
             Destroy(gameObject);
         }
@@ -36,88 +37,172 @@ public class SoundManager : MonoBehaviour
     private void Start()
     {
         ApplyVolumes();
-        if (menuMusic) PlayMusic(menuMusic);
+
+        if (menuMusic != null)
+            PlayMusic(menuMusic);
     }
 
-    // Public Functions
     public void PlaySound(AudioClip clip)
     {
-        if (clip != null)
-        {
-            sfxSource.PlayOneShot(clip, sfxVolume);
-        }
+        if (clip == null || sfxSource == null)
+            return;
+
+        sfxSource.PlayOneShot(
+            clip,
+            Mathf.Clamp01(sfxVolume)
+        );
     }
 
     public void PlaySound(string name)
     {
-        // Shortcut mapping for convenience
-        switch (name.ToLower())
+        if (string.IsNullOrEmpty(name))
+            return;
+
+        switch (name.ToLowerInvariant())
         {
-            case "click": PlaySound(clickSound); break;
-            case "correct": PlaySound(correctSound); break;
-            case "incorrect": PlaySound(incorrectSound); break;
+            case "click":
+                PlaySound(clickSound);
+                break;
+
+            case "correct":
+                PlaySound(correctSound);
+                break;
+
+            case "incorrect":
+                PlaySound(incorrectSound);
+                break;
         }
     }
 
     public void PlayMusic(AudioClip clip, float fadeTime = 1f)
     {
-        StartCoroutine(FadeInMusic(clip, fadeTime));
+        if (clip == null || musicSource == null)
+            return;
+
+        StopMusicFade();
+
+        musicFadeCoroutine = StartCoroutine(
+            FadeInMusic(clip, Mathf.Max(0f, fadeTime))
+        );
     }
 
     public void StopMusic(float fadeTime = 1f)
     {
-        StartCoroutine(FadeOutMusic(fadeTime));
+        if (musicSource == null)
+            return;
+
+        StopMusicFade();
+
+        musicFadeCoroutine = StartCoroutine(
+            FadeOutMusic(Mathf.Max(0f, fadeTime))
+        );
     }
 
     public void SetMusicVolume(float volume)
     {
-        musicVolume = volume;
-        musicSource.volume = volume;
+        musicVolume = Mathf.Clamp01(volume);
+
+        if (musicSource != null)
+            musicSource.volume = musicVolume;
     }
 
     public void SetSFXVolume(float volume)
     {
-        sfxVolume = volume;
+        sfxVolume = Mathf.Clamp01(volume);
     }
 
     private void ApplyVolumes()
     {
-        musicSource.volume = musicVolume;
-        sfxSource.volume = sfxVolume;
+        if (musicSource != null)
+            musicSource.volume = musicVolume;
+
+        if (sfxSource != null)
+            sfxSource.volume = sfxVolume;
     }
 
-    // Coroutines for fade effects
+    private void StopMusicFade()
+    {
+        if (musicFadeCoroutine == null)
+            return;
+
+        StopCoroutine(musicFadeCoroutine);
+        musicFadeCoroutine = null;
+    }
+
     private IEnumerator FadeInMusic(AudioClip clip, float duration)
     {
-        if (musicSource.isPlaying) yield return FadeOutMusic(duration / 2f);
+        if (musicSource == null)
+            yield break;
+
+        if (musicSource.isPlaying)
+            yield return FadeOutMusic(duration / 2f);
 
         musicSource.clip = clip;
-        musicSource.Play();
         musicSource.volume = 0f;
+        musicSource.Play();
+
+        if (duration <= 0f)
+        {
+            musicSource.volume = musicVolume;
+            musicFadeCoroutine = null;
+            yield break;
+        }
 
         float timer = 0f;
+
         while (timer < duration)
         {
-            musicSource.volume = Mathf.Lerp(0f, musicVolume, timer / duration);
             timer += Time.deltaTime;
+
+            musicSource.volume = Mathf.Lerp(
+                0f,
+                musicVolume,
+                Mathf.Clamp01(timer / duration)
+            );
+
             yield return null;
         }
+
         musicSource.volume = musicVolume;
+        musicFadeCoroutine = null;
     }
 
     private IEnumerator FadeOutMusic(float duration)
     {
+        if (musicSource == null)
+            yield break;
+
         float startVolume = musicSource.volume;
+
+        if (duration <= 0f)
+        {
+            musicSource.Stop();
+            musicSource.volume = musicVolume;
+            yield break;
+        }
+
         float timer = 0f;
 
         while (timer < duration)
         {
-            musicSource.volume = Mathf.Lerp(startVolume, 0f, timer / duration);
             timer += Time.deltaTime;
+
+            musicSource.volume = Mathf.Lerp(
+                startVolume,
+                0f,
+                Mathf.Clamp01(timer / duration)
+            );
+
             yield return null;
         }
 
         musicSource.Stop();
         musicSource.volume = musicVolume;
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null;
     }
 }
